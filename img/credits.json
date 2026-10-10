@@ -223,5 +223,104 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "w": 3840,
   "h": 2560
+ },
+ "duck": {
+  "title": "Peking duck by Mr Wabu in Beijing.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Peking_duck_by_Mr_Wabu_in_Beijing.jpg",
+  "artist": "Mr Wabu",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "w": 2832,
+  "h": 2128
+ },
+ "jiaozi": {
+  "title": "Jiaozi at Xialinyuan Dumplings Restaurant, Beijing (20190528113622).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Jiaozi_at_Xialinyuan_Dumplings_Restaurant,_Beijing_(20190528113622).jpg",
+  "artist": "N509FZ",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "w": 3912,
+  "h": 2608
+ },
+ "taoranting": {
+  "title": "In the Taoranting Park (9673838032).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:In_the_Taoranting_Park_(9673838032).jpg",
+  "artist": "Nikolaj Potanin from Russia",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "w": 3250,
+  "h": 2167
+ },
+ "tianjin-eye": {
+  "title": "Tianjin Eye 20160514.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tianjin_Eye_20160514.jpg",
+  "artist": "JULIANISME",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "w": 4160,
+  "h": 3120
+ },
+ "beihai": {
+  "title": "Beihai Park IMG 4407 Beihai Lake - Jade Island - white dagoba.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Beihai_Park_IMG_4407_Beihai_Lake_-_Jade_Island_-_white_dagoba.jpg",
+  "artist": "Bjoertvedt",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "w": 4032,
+  "h": 3024
+ },
+ "science-museum": {
+  "title": "China Science and Technology Museum (20210403155720).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:China_Science_and_Technology_Museum_(20210403155720).jpg",
+  "artist": "N509FZ",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "w": 5822,
+  "h": 3881
+ },
+ "italian-town": {
+  "title": "Italian Style Town 21254-Tianjin (48708854138).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Italian_Style_Town_21254-Tianjin_(48708854138).jpg",
+  "artist": "xiquinhosilva",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "w": 3000,
+  "h": 2242
+ },
+ "sanlitun": {
+  "title": "Central square of Taikoo Li Sanlitun South (20200808171717).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Central_square_of_Taikoo_Li_Sanlitun_South_(20200808171717).jpg",
+  "artist": "N509FZ",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "w": 3997,
+  "h": 2665
+ },
+ "citywalk": {
+  "title": "Overview of Universal CityWalk Beijing (20210907124718).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Overview_of_Universal_CityWalk_Beijing_(20210907124718).jpg",
+  "artist": "N509FZ",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "w": 7348,
+  "h": 4899
+ },
+ "hanging-temple": {
+  "title": "Hunyuan Xuankong Si 2013.08.30 09-02-11.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Hunyuan_Xuankong_Si_2013.08.30_09-02-11.jpg",
+  "artist": "Zhangzhugang",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "w": 5472,
+  "h": 3648
+ },
+ "tanghulu": {
+  "title": "TangHuLu.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:TangHuLu.JPG",
+  "artist": "Popo le Chien",
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "w": 3888,
+  "h": 2592
  }
 }

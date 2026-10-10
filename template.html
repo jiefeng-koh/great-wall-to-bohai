@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>From the Great Wall to the Bohai Sea — 14 Days in Northern China</title>
-<meta name="description" content="A 14-day family journey through Beijing, Datong, Tianjin and Aranya by high-speed rail, 13–26 June 2027.">
+<title>From the Great Wall to the Bohai Sea — 13 Days in Northern China</title>
+<meta name="description" content="A 13-day family journey through Beijing, Datong, Tianjin and Aranya by high-speed rail, 13–25 June 2027. Day by day: where to go, what to eat, and what's nearby.">
 <meta property="og:title" content="From the Great Wall to the Bohai Sea">
-<meta property="og:description" content="Fourteen unhurried days through Beijing, Datong, Tianjin and Aranya — linked entirely by high-speed rail.">
+<meta property="og:description" content="Thirteen unhurried days through Beijing, Datong, Tianjin and Aranya, linked by high-speed rail.">
 <meta property="og:image" content="img/mutianyu-green.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -15,631 +15,614 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="{{src:mutianyu-green}}.jpg">
+<link rel="preload" as="image" href="{{src:mutianyu-green}}-sm.jpg">
 <style>
+/* Layout: a field guide you open on the day. Sticky day picker, then one card per day: photos, a timed plan with map buttons, and a "nearby & plan B" box. */
 :root{
   --bg:#EDF1EC; --surface:#F8FAF7; --ink:#1D2B3A; --muted:#56636C;
   --cinnabar:#B3302A; --gold:#C38F22; --jade:#4F8373; --line:#CAD5CE;
-  --sky:#D9E5E3; --sky2:#F3E3C4; --sea:#7FA9B8; --sand:#E7DCC4;
+  --sky:#D9E5E3; --sky2:#F3E3C4; --sea:#7FA9B8; --sand:#E7DCC4; --plum:#8B6BB1;
   --shadow:0 1px 2px rgba(29,43,58,.06),0 8px 24px rgba(29,43,58,.08);
   --display:"Marcellus","Palatino Linotype",Palatino,Georgia,serif;
   --body:"Nunito Sans","Segoe UI",system-ui,-apple-system,sans-serif;
-  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+  --han:"Noto Serif SC","Songti SC","PingFang SC","SimSun",serif;
   color-scheme:light dark;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#131B21; --surface:#1A242B; --ink:#E4EBE7; --muted:#9BA8A4;
     --cinnabar:#E2594E; --gold:#E2B552; --jade:#7DB0A0; --line:#2C3A42;
-    --sky:#1F2F38; --sky2:#3A3226; --sea:#35596A; --sand:#4A4337;
+    --sky:#1F2F38; --sky2:#3A3226; --sea:#35596A; --sand:#4A4337; --plum:#B39AD6;
     --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);
   }
 }
 :root[data-theme="dark"]{
   --bg:#131B21; --surface:#1A242B; --ink:#E4EBE7; --muted:#9BA8A4;
   --cinnabar:#E2594E; --gold:#E2B552; --jade:#7DB0A0; --line:#2C3A42;
-  --sky:#1F2F38; --sky2:#3A3226; --sea:#35596A; --sand:#4A4337;
+  --sky:#1F2F38; --sky2:#3A3226; --sea:#35596A; --sand:#4A4337; --plum:#B39AD6;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-padding-top:72px;scroll-behavior:smooth}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 88px);scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,svg{max-width:100%;display:block}
 a{color:inherit}
 a:focus-visible,button:focus-visible{outline:2px solid var(--cinnabar);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 @media (max-width:520px){.wrap{padding:0 16px}}
-h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;margin:0}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.2;margin:0}
+.zh{font-family:var(--han);font-weight:600}
 
 /* photos */
-.ph{margin:0;position:relative}
+.ph{margin:0;position:relative;min-width:0}
 .ph a{display:block;overflow:hidden;border-radius:14px;background:var(--sky);cursor:zoom-in}
-.ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-.ph a:hover img{transform:scale(1.04)}
-.ph figcaption{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.4}
-@media (prefers-reduced-motion: reduce){.ph img{transition:none}.ph a:hover img{transform:none}}
-
-/* nav */
-.nav{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,border-color .3s,color .3s;border-bottom:1px solid transparent;color:#fff;padding-top:env(safe-area-inset-top,0px)}
-.nav.solid{background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--line);color:var(--ink)}
-.nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
-.brand{font-family:var(--display);font-size:19px;white-space:nowrap;text-decoration:none}
-.nav ul{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none}
-.nav ul::-webkit-scrollbar{display:none}
-.nav a.chap{display:flex;align-items:center;gap:6px;text-decoration:none;font-size:14px;padding:6px 11px;border-radius:20px;white-space:nowrap;opacity:.85}
-.nav a.chap:hover{opacity:1;background:color-mix(in srgb,currentColor 12%,transparent)}
-.nav a.chap span{font-family:var(--han);font-size:15px}
-.nav.solid a.chap span{color:var(--cinnabar)}
-@media (max-width:760px){.brand{display:none}.nav ul{margin-left:0}}
+.ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2}
+.ph figcaption{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.4}
 
 /* hero */
-.hero{position:relative;min-height:min(92svh,860px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#2b3a2f}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;animation:drift 24s ease-out both}
-@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
-@media (prefers-reduced-motion: reduce){.hero>img{animation:none}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,22,.45) 0%,rgba(10,16,22,0) 28%,rgba(10,16,22,.15) 55%,rgba(10,16,22,.78) 100%)}
-.hero .wrap{position:relative;z-index:1;width:100%;padding-bottom:64px}
-.hero .dates{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 18px;padding:6px 12px;border:1px solid rgba(255,255,255,.5);border-radius:30px;backdrop-filter:blur(4px)}
-.hero h1{font-size:clamp(46px,8.4vw,108px);letter-spacing:-.01em;max-width:12ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
-.hero p.lede{font-size:clamp(18px,2vw,22px);max-width:40ch;margin:20px 0 0;opacity:.92}
-.hero .credit{position:absolute;right:16px;bottom:12px;z-index:1;font-size:11px;opacity:.7}
-.scrollcue{position:absolute;left:50%;bottom:18px;z-index:1;width:22px;height:34px;border:2px solid rgba(255,255,255,.7);border-radius:12px;transform:translateX(-50%)}
-.scrollcue::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;border-radius:2px;background:#fff;transform:translateX(-50%);animation:cue 1.8s infinite}
-@keyframes cue{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,10px)}}
-@media (max-width:720px){.scrollcue{display:none}}
+.hero{position:relative;min-height:min(78svh,720px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#2b3a2f}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,22,.35) 0%,rgba(10,16,22,0) 30%,rgba(10,16,22,.2) 55%,rgba(10,16,22,.82) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:80px;padding-bottom:48px}
+.hero .dates{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 16px;padding:6px 12px;border:1px solid rgba(255,255,255,.5);border-radius:30px}
+.hero h1{font-size:clamp(40px,8vw,96px);letter-spacing:-.01em;max-width:12ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero p.lede{font-size:clamp(17px,2vw,21px);max-width:44ch;margin:16px 0 0;opacity:.92}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 15px/1 var(--body);padding:13px 18px;border-radius:30px;border:0;cursor:pointer;text-decoration:none}
+.btn.primary{background:var(--cinnabar);color:#fff}
+.btn.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.45)}
+.hero .credit{position:absolute;right:14px;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:1;font-size:11px;opacity:.7}
+
+/* day picker */
+.picker{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.picker .wrap{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-top:9px;padding-bottom:9px}
+.picker .wrap::-webkit-scrollbar{display:none}
+.picker a{flex:none;display:flex;flex-direction:column;align-items:center;min-width:52px;text-decoration:none;padding:5px 8px 6px;border-radius:12px;border:1px solid var(--line);background:var(--surface);line-height:1.15}
+.picker a b{font-family:var(--display);font-weight:400;font-size:19px}
+.picker a span{font-size:11px;color:var(--muted);white-space:nowrap}
+.picker a.city{border-color:transparent;background:transparent;justify-content:center}
+.picker a.city b{font-family:var(--han);font-weight:600;font-size:17px;color:var(--cinnabar)}
+.picker a.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.picker a.on span{color:inherit;opacity:.75}
+.picker a.today{box-shadow:0 0 0 2px var(--cinnabar)}
 
 /* overview */
-.overview{padding:72px 0 0}
-.ov-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
-.ov-grid .kicker{color:var(--cinnabar);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
-.ov-grid h2{font-size:clamp(30px,4vw,44px);margin-bottom:16px}
+.overview{padding:56px 0 0}
+.ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.kicker{color:var(--cinnabar);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px}
+.ov-grid h2{font-size:clamp(28px,4vw,40px);margin-bottom:14px}
 .ov-grid p{color:var(--muted);margin:0}
-.facts{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:12px 36px;margin:32px 0 0;padding:0;list-style:none}
-.facts li{font-size:14px;color:var(--muted)}
-.facts b{display:block;font-family:var(--display);font-weight:400;font-size:40px;line-height:1.1;color:var(--ink)}
-.routecard{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow);margin:0}
-.routecard figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+.howto{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:15px}
+.howto li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+.howto li i{font-style:normal;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);font-size:13px;font-weight:700}
+.stays{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.stays li{padding:14px 18px;border-bottom:1px solid var(--line);display:grid;gap:2px}
+.stays li:last-child{border-bottom:0}
+.stays .n{font-size:12px;font-weight:700;color:var(--jade);letter-spacing:.04em;text-transform:uppercase}
+.stays h3{font-size:20px}
+.stays p{margin:0;font-size:14px;color:var(--muted)}
 @media (max-width:860px){.ov-grid{grid-template-columns:1fr;gap:32px}}
-@media (max-width:420px){.facts{grid-template-columns:repeat(2,auto)}}
-
-/* sections */
-section.block{padding:96px 0 0}
-.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:32px;flex-wrap:wrap}
-.sec-head h2{font-size:clamp(30px,4vw,46px)}
-.sec-head p{margin:0;color:var(--muted);max-width:52ch}
-
-/* highlights */
-.hl{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px}
-.hl article .ph img{aspect-ratio:4/3}
-.hl h3{font-size:23px;margin:4px 0 8px}
-.hl p{margin:0;color:var(--muted);font-size:16px}
-.hl .where{display:block;font-size:13px;color:var(--cinnabar);font-weight:700;margin-top:16px;letter-spacing:.04em;text-transform:uppercase}
-@media (max-width:900px){.hl{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.hl{grid-template-columns:1fr}}
-
-/* stays */
-.stays{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.stay{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 20px 22px;position:relative;overflow:hidden}
-.stay::before{content:attr(data-han);position:absolute;right:-6px;bottom:-26px;font-family:var(--han);font-size:110px;line-height:1;color:var(--cinnabar);opacity:.08}
-.stay .n{font-size:13px;color:var(--jade);font-weight:700}
-.stay h3{font-size:22px;margin:6px 0 8px}
-.stay p{margin:0;font-size:15px;color:var(--muted);position:relative}
 
 /* chapters */
-.chapter{padding:112px 0 0}
-.ch-hero{position:relative;border-radius:24px;overflow:hidden;min-height:min(62vw,520px);display:flex;align-items:flex-end;color:#fff;background:#223}
+.chapter{padding:72px 0 0}
+.ch-hero{position:relative;border-radius:22px;overflow:hidden;min-height:min(52vw,400px);display:flex;align-items:flex-end;color:#fff;background:#223}
 .ch-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ch-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,22,0) 35%,rgba(10,16,22,.75) 100%)}
-.ch-hero .inner{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:end;padding:36px 40px;width:100%}
-.ch-hero .han{font-family:var(--han);font-size:clamp(72px,11vw,140px);line-height:.85;color:#fff;opacity:.95;text-shadow:0 4px 30px rgba(0,0,0,.4)}
-.ch-hero .num{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-bottom:8px}
-.ch-hero h2{font-size:clamp(28px,4.4vw,50px);text-shadow:0 2px 20px rgba(0,0,0,.35)}
-.ch-hero .credit{position:absolute;right:14px;top:12px;z-index:1;font-size:11px;opacity:.75}
-@media (max-width:620px){.ch-hero{border-radius:18px}.ch-hero .inner{grid-template-columns:1fr;gap:6px;padding:22px}.ch-hero .han{font-size:64px}}
-.ch-intro{display:flex;justify-content:space-between;gap:24px 40px;align-items:flex-start;margin-top:24px;flex-wrap:wrap}
-.ch-intro p{margin:0;color:var(--muted);max-width:62ch;font-size:18px}
-.stayline{margin:0;padding:10px 16px;border-left:3px solid var(--gold);background:var(--surface);border-radius:0 10px 10px 0;font-size:15px}
-.stayline b{font-weight:700}
+.ch-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,22,0) 35%,rgba(10,16,22,.78) 100%)}
+.ch-hero .inner{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:end;padding:28px 32px;width:100%}
+.ch-hero .han{font-family:var(--han);font-weight:600;font-size:clamp(64px,10vw,120px);line-height:.85;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+.ch-hero .num{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-bottom:6px}
+.ch-hero h2{font-size:clamp(26px,4vw,44px);text-shadow:0 2px 20px rgba(0,0,0,.35)}
+@media (max-width:620px){.ch-hero{border-radius:16px;min-height:260px}.ch-hero .inner{grid-template-columns:1fr;gap:4px;padding:20px}.ch-hero .han{font-size:56px}}
+.stayline{margin:18px 0 0;padding:10px 16px;border-left:3px solid var(--gold);background:var(--surface);border-radius:0 10px 10px 0;font-size:15px}
 
-.days{margin-top:36px;border-top:1px solid var(--line)}
-.day{display:grid;grid-template-columns:150px 1fr;gap:32px;padding:36px 0;border-bottom:1px solid var(--line)}
-.day .num{font-family:var(--display);font-size:56px;line-height:1}
-.day .num small{font-size:14px;color:var(--muted);display:block;margin-bottom:4px;font-family:var(--body);letter-spacing:.08em;text-transform:uppercase}
-.day .date{margin-top:8px;font-size:14px;color:var(--muted)}
-.day .body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:32px;align-items:start}
-.day .body.noshots{grid-template-columns:1fr}
-.day h3{font-size:clamp(24px,3vw,30px);margin-bottom:6px}
-.day .intro{margin:0 0 18px;color:var(--muted);max-width:62ch}
-.day dl{margin:0;display:grid;grid-template-columns:78px 1fr;row-gap:10px;column-gap:16px}
-.day dt{font-size:14px;font-weight:700;padding-top:2px;display:flex;align-items:center;gap:8px}
-.day dt::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c,var(--jade));flex:none}
-.day dd{margin:0}
-.day dd em{color:var(--muted)}
-.shots{display:grid;gap:14px}
-.shots.two{grid-template-columns:1fr 1fr}
-.shots.two .ph img{aspect-ratio:4/5}
-.t-do{--c:var(--jade)} .t-eat{--c:var(--cinnabar)} .t-drink{--c:var(--sea)} .t-watch{--c:var(--gold)} .t-shop{--c:#8B6BB1} .t-tip{--c:var(--muted)}
-@media (max-width:980px){.day .body{grid-template-columns:1fr}.shots{max-width:560px}}
-@media (max-width:720px){
-  .day{grid-template-columns:1fr;gap:12px}
-  .day .when{display:flex;align-items:baseline;gap:14px}
-  .day .num{font-size:40px}
-  .day .num small{display:inline;margin:0 6px 0 0}
-  .day dl{grid-template-columns:66px 1fr;column-gap:12px}
+/* day cards */
+.day{margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:28px 30px 26px;display:grid;gap:20px;min-width:0}
+.day.is-today{border-color:var(--cinnabar);box-shadow:0 0 0 2px var(--cinnabar),var(--shadow)}
+.dh{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.dh .num{font-family:var(--display);font-size:52px;line-height:.9;min-width:64px;text-align:center}
+.dh .num small{display:block;font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.dh .date{font-size:14px;font-weight:700;color:var(--cinnabar)}
+.dh h3{font-size:clamp(24px,3vw,32px);margin:2px 0 6px}
+.dh p{margin:0;color:var(--muted);max-width:66ch}
+.todaytag{display:none;margin-left:8px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--cinnabar);color:#fff;padding:2px 8px;border-radius:20px;vertical-align:2px}
+.day.is-today .todaytag{display:inline-block}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
+.shots .ph img{aspect-ratio:16/10}
+
+.plan{list-style:none;margin:0;padding:0;display:grid}
+.plan > li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.plan .when{font-size:13px;font-weight:700;display:flex;gap:8px;align-items:flex-start;padding-top:3px;color:var(--c,var(--jade))}
+.plan .when::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c,var(--jade));flex:none;margin-top:5px}
+.plan h4{font-family:var(--body);font-weight:700;font-size:17px;line-height:1.35}
+.plan h4 .zh{font-size:15px;color:var(--muted);margin-left:6px;white-space:nowrap}
+.plan p{margin:3px 0 0;max-width:68ch}
+.plan p em{color:var(--muted)}
+.plan .rest{background:color-mix(in srgb,var(--sea) 14%,transparent);border-radius:12px;padding:12px 14px;margin:6px 0;border-top:0}
+.plan .rest + li{border-top:0}
+.t-do{--c:var(--jade)} .t-eat{--c:var(--cinnabar)} .t-drink{--c:#3C7F99} .t-watch{--c:var(--gold)} .t-shop{--c:var(--plum)} .t-tip{--c:var(--muted)}
+.go{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.go a,.go button{font:700 12.5px/1 var(--body);padding:7px 11px;border-radius:20px;border:1px solid var(--line);background:var(--bg);color:var(--ink);text-decoration:none;cursor:pointer}
+.go button{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.go a:hover{border-color:var(--jade)}
+
+.alt{background:color-mix(in srgb,var(--gold) 10%,var(--surface));border:1px dashed color-mix(in srgb,var(--gold) 60%,transparent);border-radius:14px;padding:16px 18px}
+.alt h4{font-size:19px;margin-bottom:8px}
+.alt ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.alt li{font-size:15px}
+.alt li b{display:block}
+.alt li .why{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.alt .go{margin-top:6px}
+.sleep{margin:0;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.sleep b{color:var(--ink)}
+@media (max-width:640px){
+  .day{padding:20px 16px 18px;border-radius:16px;gap:16px}
+  .dh{grid-template-columns:1fr;gap:4px}
+  .dh .num{display:flex;align-items:baseline;gap:6px;text-align:left;font-size:38px}
+  .dh .num small{display:inline;margin:0}
+  .plan > li{grid-template-columns:1fr;gap:4px}
+  .plan h4 .zh{display:block;margin:2px 0 0}
+  .shots{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:0 16px;scrollbar-width:none}
+  .shots::-webkit-scrollbar{display:none}
+  .shots .ph{flex:0 0 80%;scroll-snap-align:center}
+  .shots .ph:only-child{flex-basis:100%}
 }
 
-/* photo strip */
-.strip{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:14px;margin-top:36px}
-.strip .ph:first-child{grid-row:span 2}
-.strip .ph a{height:100%}
-.strip .ph img{aspect-ratio:auto;height:100%}
-@media (max-width:720px){.strip{grid-template-columns:1fr 1fr;grid-template-rows:auto}.strip .ph:first-child{grid-column:span 2;grid-row:auto}.strip .ph img{aspect-ratio:4/3}}
-
 /* guides */
-.guides{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-.guides h3{font-size:24px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--c)}
+section.block{padding:80px 0 0}
+.sec-head{margin-bottom:24px}
+.sec-head h2{font-size:clamp(28px,4vw,42px)}
+.sec-head p{margin:6px 0 0;color:var(--muted);max-width:60ch}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px}
+.guides h3{font-size:23px;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--c)}
 .guides ul{list-style:none;margin:0;padding:0}
-.guides li{padding:10px 0;border-bottom:1px solid var(--line);font-size:16px}
-.guides li b{font-weight:700}
-.guides li span{display:block;color:var(--muted);font-size:14px}
-@media (max-width:860px){.guides{grid-template-columns:1fr}}
-
-/* practical */
-.practical{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:36px;box-shadow:var(--shadow)}
-.practical h3{font-size:24px;margin-bottom:12px}
+.guides li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.guides li span{display:block;color:var(--muted);font-size:13.5px}
+.practical{display:grid;grid-template-columns:1fr 1fr;gap:36px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+.practical h3{font-size:23px;margin-bottom:10px}
 .practical ol,.practical ul{margin:0;padding-left:20px}
 .practical li{margin-bottom:8px}
-@media (max-width:760px){.practical{grid-template-columns:1fr;padding:24px}}
+@media (max-width:760px){.practical{grid-template-columns:1fr;padding:22px}}
 
-/* closing */
-.closing{position:relative;margin-top:112px;min-height:420px;display:flex;align-items:center;color:#fff;overflow:hidden}
+.closing{position:relative;margin-top:96px;min-height:360px;display:flex;align-items:center;color:#fff;overflow:hidden}
 .closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .closing::after{content:"";position:absolute;inset:0;background:rgba(10,16,22,.45)}
 .closing .wrap{position:relative;z-index:1;text-align:center}
-.closing h2{font-size:clamp(32px,5vw,58px)}
-.closing p{margin:14px auto 0;max-width:46ch;opacity:.9}
+.closing h2{font-family:var(--han);font-weight:600;font-size:clamp(34px,5vw,58px)}
+.closing p{margin:12px auto 0;max-width:46ch;opacity:.9}
 
-footer{padding:48px 0 48px;color:var(--muted);font-size:14px}
-footer .top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:24px;border-bottom:1px solid var(--line)}
-footer details{margin-top:20px}
+footer{padding:40px 0 48px;color:var(--muted);font-size:14px}
+footer .top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--line)}
+footer details{margin-top:18px}
 footer summary{cursor:pointer;font-weight:700;color:var(--ink)}
 footer ol{columns:2;column-gap:40px;padding-left:20px;margin:14px 0 0;font-size:13px}
-footer ol li{break-inside:avoid;margin-bottom:6px}
+footer ol li{break-inside:avoid;margin-bottom:6px;overflow-wrap:anywhere}
 @media (max-width:720px){footer ol{columns:1}}
 
-/* lightbox */
-dialog.lb{border:0;padding:0;background:transparent;max-width:min(96vw,1600px);max-height:94vh;color:#fff}
-dialog.lb::backdrop{background:rgba(8,12,16,.9)}
+/* lightbox + driver card */
+dialog{border:0;padding:0}
+dialog.lb{background:transparent;max-width:min(96vw,1600px);max-height:94vh;color:#fff}
+dialog::backdrop{background:rgba(8,12,16,.9)}
 dialog.lb img{max-width:min(96vw,1600px);max-height:84vh;width:auto;height:auto;border-radius:8px;margin:0 auto}
 dialog.lb p{margin:10px 4px 0;font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 dialog.lb p span{opacity:.7;font-size:12px}
-dialog.lb button{position:fixed;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:24px;line-height:1;cursor:pointer}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none}}
+.x{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+dialog.drvcard{width:min(94vw,640px);background:#fff;color:#111;border-radius:20px;text-align:center;padding:36px 24px 28px}
+dialog.drvcard .x{background:#eee;color:#111}
+.drvcard .ask{font-size:15px;color:#555;margin:0 0 14px}
+.drvcard .big{font-family:var(--han);font-weight:600;font-size:clamp(40px,11vw,72px);line-height:1.2;margin:0;overflow-wrap:anywhere}
+.drvcard .en{margin:14px 0 0;font-size:15px;color:#555}
 </style>
 </head>
 <body>
 
-<nav class="nav" id="nav" aria-label="Chapters">
+<header class="hero" id="top">
+  <img src="{{src:mutianyu-green}}-sm.jpg" srcset="img/mutianyu-green-sm.jpg 900w, img/mutianyu-green.jpg 1800w" sizes="100vw" alt="The Great Wall at Mutianyu winding over green summer hills" fetchpriority="high">
+  <span class="credit">Mutianyu, Great Wall</span>
   <div class="wrap">
-    <a class="brand" href="#top">Northern China by Rail</a>
-    <ul>
-      <li><a class="chap" href="#beijing"><span>京</span>Beijing</a></li>
-      <li><a class="chap" href="#datong"><span>同</span>Datong</a></li>
-      <li><a class="chap" href="#imperial"><span>宫</span>Imperial Beijing</a></li>
-      <li><a class="chap" href="#aranya"><span>海</span>Aranya</a></li>
-      <li><a class="chap" href="#universal"><span>乐</span>Universal</a></li>
-      <li><a class="chap" href="#guide">Eat, shop, watch</a></li>
-    </ul>
+    <p class="dates">13 – 25 June 2027 · a family journey</p>
+    <h1>From the Great Wall to the Bohai Sea</h1>
+    <p class="lede">Thirteen days through Beijing, Datong, Tianjin and Aranya by high-speed train. Open it each morning: where to go, what to eat, and what's nearby if plans change.</p>
+    <div class="cta">
+      <a class="btn primary" id="todayBtn" href="#d1">Start with Day 1</a>
+      <a class="btn ghost" href="#overview">How to use this</a>
+    </div>
+  </div>
+</header>
+
+<nav class="picker" aria-label="Days">
+  <div class="wrap" id="picker">
+    <a class="city" href="#beijing" aria-label="Beijing"><b>京</b></a>
+    <a href="#d1"><b>1</b><span>Sun 13</span></a>
+    <a href="#d2"><b>2</b><span>Mon 14</span></a>
+    <a class="city" href="#datong" aria-label="Datong"><b>同</b></a>
+    <a href="#d3"><b>3</b><span>Tue 15</span></a>
+    <a href="#d4"><b>4</b><span>Wed 16</span></a>
+    <a class="city" href="#imperial" aria-label="Imperial Beijing"><b>宫</b></a>
+    <a href="#d5"><b>5</b><span>Thu 17</span></a>
+    <a href="#d6"><b>6</b><span>Fri 18</span></a>
+    <a href="#d7"><b>7</b><span>Sat 19</span></a>
+    <a href="#d8"><b>8</b><span>Sun 20</span></a>
+    <a class="city" href="#aranya" aria-label="Tianjin and Aranya"><b>海</b></a>
+    <a href="#d9"><b>9</b><span>Mon 21</span></a>
+    <a href="#d10"><b>10</b><span>Tue 22</span></a>
+    <a class="city" href="#universal" aria-label="Universal Beijing"><b>乐</b></a>
+    <a href="#d11"><b>11</b><span>Wed 23</span></a>
+    <a href="#d12"><b>12</b><span>Thu 24</span></a>
+    <a href="#d13"><b>13</b><span>Fri 25</span></a>
+    <a class="city" href="#guide" aria-label="Eat, shop and watch"><b>食</b></a>
   </div>
 </nav>
 
-<header class="hero" id="top">
-  <img src="{{src:mutianyu-green}}.jpg" srcset="img/mutianyu-green-sm.jpg 900w, img/mutianyu-green.jpg 1800w" sizes="100vw" alt="The Great Wall at Mutianyu winding over green summer hills" fetchpriority="high">
-  <div class="wrap">
-    <p class="dates">13 – 26 June 2027 · a family journey</p>
-    <h1>From the Great Wall to the Bohai Sea</h1>
-    <p class="lede">Fourteen unhurried days through Beijing, Datong, Tianjin and Aranya — linked entirely by high-speed rail.</p>
-  </div>
-  <span class="credit">Mutianyu · Velatrix, CC0</span>
-  <span class="scrollcue" aria-hidden="true"></span>
-</header>
-
 <main>
 
-<section class="overview">
+<section class="overview" id="overview">
   <div class="wrap ov-grid">
-    <div class="rv">
+    <div>
       <p class="kicker">The route</p>
-      <h2>Four cities, one rail line at a time</h2>
-      <p>West to Datong's walls and grottoes, back to the palaces of Beijing with a day by the river in Tianjin, east to the sea at Aranya, and a finale at Universal.</p>
-      <ul class="facts">
-        <li><b>14</b>days</li>
-        <li><b>5</b>hotels</li>
-        <li><b>4</b>cities</li>
-        <li><b>0</b>long drives</li>
+      <h2>Beijing → Datong → Beijing → Tianjin → Aranya → Universal</h2>
+      <p>Every leg is by train and nothing doubles back. Tianjin is a stop on the way to the coast, not a day trip.</p>
+      <ul class="howto">
+        <li><i>1</i><span>Tap a day number at the top. During the trip, the button above jumps straight to today.</span></li>
+        <li><i>2</i><span>Each stop has <b>Amap</b> and <b>Apple Maps</b> buttons. Google Maps works poorly in China.</span></li>
+        <li><i>3</i><span><b>Show driver</b> fills the screen with the Chinese name, for a taxi or a Didi driver.</span></li>
+        <li><i>4</i><span>The gold <b>Nearby &amp; plan B</b> box lists swaps for rain, tired kids or a long queue.</span></li>
       </ul>
     </div>
-    <figure class="routecard rv">
-      <svg viewBox="0 0 440 300" role="img" aria-label="Route map: Beijing to Datong, back to Beijing, day trip to Tianjin, then Aranya on the coast and Universal Beijing">
-        <rect width="440" height="300" rx="10" fill="var(--sky)"/>
-        <path d="M300 300 C 330 250, 360 230, 440 210 L440 300Z" fill="var(--sea)" opacity=".55"/>
-        <text x="392" y="272" font-family="var(--body)" font-size="12" fill="var(--ink)" opacity=".6">Bohai Sea</text>
-        <g fill="none" stroke-width="2.5" stroke-linecap="round">
-          <path d="M70 110 Q 140 90 210 130" stroke="var(--cinnabar)" stroke-dasharray="1 7"/>
-          <path d="M210 130 Q 225 170 238 200" stroke="var(--jade)" stroke-dasharray="6 6"/>
-          <path d="M218 132 Q 300 120 368 176" stroke="var(--cinnabar)" stroke-dasharray="1 7"/>
-          <path d="M368 176 Q 300 150 232 140" stroke="var(--gold)" stroke-dasharray="1 7"/>
-        </g>
-        <g font-family="var(--body)" font-size="13" fill="var(--ink)">
-          <circle cx="70" cy="110" r="7" fill="var(--cinnabar)"/><text x="46" y="92" font-weight="700">Datong</text>
-          <circle cx="212" cy="130" r="9" fill="var(--ink)"/><text x="176" y="112" font-weight="700">Beijing</text>
-          <circle cx="238" cy="202" r="6" fill="var(--jade)"/><text x="250" y="206">Tianjin <tspan fill="var(--muted)">day trip</tspan></text>
-          <circle cx="368" cy="176" r="7" fill="var(--cinnabar)"/><text x="330" y="160" font-weight="700">Aranya</text>
-          <circle cx="232" cy="142" r="5" fill="var(--gold)"/><text x="160" y="160" font-size="12" fill="var(--muted)">Universal</text>
-        </g>
-      </svg>
-      <figcaption>Beijing → Datong → Beijing (Tianjin day trip) → Aranya → Universal Beijing. Every leg by train.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="block" id="highlights">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <h2>What you'll experience</h2>
-      <p>The moments this trip is built around — each one chosen to work for adults and children alike.</p>
-    </div>
-    <div class="hl">
-      <article class="rv">{{fig:datong-wall-tower|A corner tower on Datong's restored Ming city wall}}<span class="where">Datong</span><h3>Ride a 600-year-old city wall at sunset</h3><p>A six-seat family bike along the 7.2 km wall top, ending at the South Gate for a Mulan performance.</p></article>
-      <article class="rv">{{fig:daiwangfu|Glazed dragon screen and stone lion at the gate of Daiwangfu, Datong}}<span class="where">Datong</span><h3>A night in costume at a Ming palace</h3><p>Hanfu dress-up and golden-hour photos at Daiwangfu, followed by its evening show.</p></article>
-      <article class="rv">{{fig:tai-chi|Locals practising tai chi under the trees in a Beijing park}}<span class="where">Beijing</span><h3>Weiqi with Beijing's grandfathers</h3><p>Walk-up games of go under the trees at Taoranting Park, where children and elders play each other.</p></article>
-      <article class="rv">{{fig:kungfu|Martial artists in a stage kung fu performance}}<span class="where">Beijing</span><h3>The Legend of Kung Fu</h3><p>A stage story of a boy who trains to become a master — martial arts, acrobatics and music, no Mandarin needed.</p></article>
-      <article class="rv">{{fig:beidaihe-dusk|Pink evening sky over the Bohai Sea near Beidaihe}}<span class="where">Aranya</span><h3>A seaside theatre festival</h3><p>Outdoor performances, parades and installations around the Lonely Library on the shore of the Bohai Sea.</p></article>
-      <article class="rv">{{fig:universal-panda|Kung Fu Panda Land lit up at night, Universal Beijing}}<span class="where">Beijing</span><h3>Universal to finish</h3><p>Stay at the park gate for early entry — Kung Fu Panda Land, Transformers and Jurassic World.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="stays">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <h2>Where you'll stay</h2>
-      <p>Five hotels, five different experiences — family comfort, design, heritage and the sea.</p>
-    </div>
-    <div class="stays">
-      <article class="stay rv" data-han="京"><span class="n">Beijing · 2 nights</span><h3>Kerry Hotel</h3><p>A huge kids' adventure zone and themed family rooms with their own slide.</p></article>
-      <article class="stay rv" data-han="同"><span class="n">Datong · 2 nights</span><h3>Sunyata by Jixiashan</h3><p>An Eastern-aesthetic design hotel in the old quarter, facing the city wall.</p></article>
-      <article class="stay rv" data-han="宫"><span class="n">Beijing · 5 nights</span><h3>The PuXuan</h3><p>Ole Scheeren architecture, Michelin dining, and a short walk to the Forbidden City.</p></article>
-      <article class="stay rv" data-han="海"><span class="n">Aranya · 2 nights</span><h3>Aranya Lanxi</h3><p>Opened 2025: sea-view rooms, a private beach section and an infinity pool.</p></article>
-      <article class="stay rv" data-han="乐"><span class="n">Universal Beijing · 2 nights</span><h3>Universal Studios Grand Hotel</h3><p>A themed hotel at the park gate, with early park entry for guests.</p></article>
-    </div>
+    <ul class="stays" aria-label="Hotels">
+      <li><span class="n">13–15 Jun · Beijing, Chaoyang</span><h3>Kerry Hotel <span class="zh" style="font-size:15px;color:var(--muted)">北京嘉里大酒店</span></h3><p>Kids' adventure zone and themed family rooms with their own slide.</p>{{go:北京嘉里大酒店|Kerry Hotel Beijing}}</li>
+      <li><span class="n">15–17 Jun · Datong old city</span><h3>Sunyata by Jixiashan <span class="zh" style="font-size:15px;color:var(--muted)">既下山</span></h3><p>Eastern-aesthetic design hotel facing the city wall.</p>{{go:大同既下山酒店|Sunyata by Jixiashan, Datong}}</li>
+      <li><span class="n">17–21 Jun · Beijing, Dongcheng</span><h3>The PuXuan <span class="zh" style="font-size:15px;color:var(--muted)">北京璞瑄酒店</span></h3><p>A short walk to the Forbidden City and Wangfujing.</p>{{go:北京璞瑄酒店|The PuXuan Hotel}}</li>
+      <li><span class="n">21–23 Jun · Aranya, by the sea</span><h3>Aranya Lanxi <span class="zh" style="font-size:15px;color:var(--muted)">阿那亚</span></h3><p>Sea-view rooms, a private beach section and an infinity pool.</p>{{go:阿那亚|Aranya}}</li>
+      <li><span class="n">23–25 Jun · Universal Beijing</span><h3>Universal Studios Grand Hotel <span class="zh" style="font-size:15px;color:var(--muted)">北京环球影城大酒店</span></h3><p>At the park gate, with early park entry.</p>{{go:北京环球影城大酒店|Universal Studios Grand Hotel}}</li>
+    </ul>
   </div>
 </section>
 
 <!-- CHAPTER 1 -->
 <section class="chapter" id="beijing">
   <div class="wrap">
-    <div class="ch-hero rv">
-      <img src="{{src:mutianyu-autumn}}-sm.jpg" srcset="img/mutianyu-autumn-sm.jpg 900w, img/mutianyu-autumn.jpg 1800w" sizes="(max-width:1160px) 100vw, 1112px" alt="The Great Wall at Mutianyu climbing a mountain ridge" loading="lazy">
-      <span class="credit">Francesco Bini, CC BY-SA 4.0</span>
-      <div class="inner"><div class="han" aria-hidden="true">京</div><div><div class="num">Chapter one · Days 1–2</div><h2>Beijing: arrival and the Great Wall</h2></div></div>
+    <div class="ch-hero">
+      <img src="{{src:mutianyu-autumn}}-sm.jpg" srcset="img/mutianyu-autumn-sm.jpg 900w, img/mutianyu-autumn.jpg 1800w" sizes="(max-width:1080px) 100vw, 1032px" alt="The Great Wall at Mutianyu climbing a mountain ridge" loading="lazy">
+      <div class="inner"><div class="han" aria-hidden="true">京</div><div><div class="num">Days 1–2</div><h2>Beijing: arrival and the Great Wall</h2></div></div>
     </div>
-    <div class="ch-intro">
-      <p>Two easy days to land, let the children loose in a hotel built for them, and walk the Wall on its quietest day of the week.</p>
-      <p class="stayline"><b>Stay:</b> Kerry Hotel Beijing, Chaoyang — 13–15 June</p>
-    </div>
+    <p class="stayline"><b>Sleep:</b> Kerry Hotel Beijing, Chaoyang · 13–15 June</p>
 
-    <div class="days">
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>1</div><div class="date">Sunday 13 June</div></div>
-        <div class="body noshots"><div>
-          <h3>Arrive in Chaoyang</h3>
-          <p class="intro">A gentle first afternoon close to the hotel.</p>
-          <dl>
-            <dt class="t-do">Do</dt><dd>Check in and let the kids explore the hotel's adventure zone.</dd>
-            <dt class="t-shop">Shop</dt><dd>Chaoyang Joy City — Pop Mart, trading-card and collectible shops.</dd>
-            <dt class="t-drink">Drink</dt><dd>Lingcha and Yeye Bu Pao Cha, two mainland-only tea brands you won't find at home.</dd>
-            <dt class="t-eat">Eat</dt><dd>Hai Tian Ge, in the hotel.</dd>
-          </dl>
-        </div></div>
-      </article>
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>2</div><div class="date">Monday 14 June</div></div>
-        <div class="body"><div>
-          <h3>Mutianyu Great Wall</h3>
-          <p class="intro">Monday is the quietest day on the Wall — and the Forbidden City is closed anyway.</p>
-          <dl>
-            <dt class="t-do">Do</dt><dd>Cable car up, toboggan down.</dd>
-            <dt class="t-drink">Drink</dt><dd>Chestnut drinks at Great Wall Coffee by the north ticket gate.</dd>
-            <dt class="t-eat">Eat</dt><dd>Rainbow trout in Mutianyu village for lunch. Dinner at Zi Guang Yuan (halal, since 1912) or Amo at Hopson One.</dd>
-          </dl>
-        </div>
-        <div class="shots two rv">
-          {{fig:mutianyu-tower|A watchtower on the Mutianyu wall among spring trees|A Mutianyu watchtower}}
-          {{fig:toboggan|The toboggan track running down through the trees from the Wall|The toboggan down}}
-        </div></div>
-      </article>
-    </div>
+    <article class="day" id="d1" data-date="2027-06-13">
+      <header class="dh"><div class="num"><small>Day</small>1</div><div><div class="date">Sunday 13 June<span class="todaytag">Today</span></div><h3>Arrive in Chaoyang</h3><p>Nothing booked except dinner, so a late landing costs nothing.</p></div></header>
+      <div class="shots">{{fig:jiaozi|Plates of jiaozi dumplings at a Beijing dumpling house|Dumplings for the first dinner}}</div>
+      <ol class="plan">
+        <li class="t-do"><span class="when">Arrive</span><div><h4>Check in at the Kerry <span class="zh">北京嘉里大酒店</span></h4><p>Let the kids loose in the hotel's adventure zone and pool.</p>{{go:北京嘉里大酒店|Kerry Hotel Beijing}}</div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>Baoyuan Jiaozi Wu <span class="zh">宝源饺子屋</span></h4><p>About 15 minutes by taxi on Maizidian. A Michelin Bib Gourmand dumpling house whose wrappers are coloured with fruit and vegetables. Order pork and celery in rainbow colours.</p>{{go:宝源饺子屋|Baoyuan Dumpling House, Maizidian}}</div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Landing late</span><b>Hai Tian Ge, inside the Kerry</b>No taxi needed.</li>
+        <li><span class="why">Kids still have energy</span><b>China World Mall <span class="zh">国贸商城</span></b>Next door to the Kerry, with an indoor ice rink and plenty of restaurants.{{go:国贸商城|China World Mall}}</li>
+      </ul></aside>
+      <p class="sleep"><span>Sleep</span><b>Kerry Hotel Beijing</b></p>
+    </article>
+
+    <article class="day" id="d2" data-date="2027-06-14">
+      <header class="dh"><div class="num"><small>Day</small>2</div><div><div class="date">Monday 14 June<span class="todaytag">Today</span></div><h3>Mutianyu Great Wall</h3><p>Monday is the quietest day on the Wall, and the Forbidden City is closed anyway. About 1.5 hours by car each way.</p></div></header>
+      <div class="shots">{{fig:mutianyu-tower|A watchtower on the Mutianyu wall among spring trees|A Mutianyu watchtower}}{{fig:toboggan|The toboggan track running down through the trees from the Wall|The toboggan down}}</div>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Breakfast</span><div><h4>Hotel buffet at the Kerry</h4><p>Early start, so keep it easy.</p></div></li>
+        <li class="t-do"><span class="when">08:00</span><div><h4>Mutianyu Great Wall <span class="zh">慕田峪长城</span></h4><p>Leave by 8:00. Cable car up, toboggan down.</p>{{go:慕田峪长城|Mutianyu Great Wall}}</div></li>
+        <li class="t-eat"><span class="when">Lunch</span><div><h4>Rainbow trout in Mutianyu village</h4><p>The village speciality, grilled or braised.</p></div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>Mu·Cafe at the foot of the Wall</h4><p>Great Wall-themed cups and a view of the watchtowers. Mutianyu is chestnut country, so ask for anything chestnut.</p></div></li>
+        <li class="t-do"><span class="when">15:00</span><div><h4>Back at the Kerry</h4><p>Nap and pool.</p></div></li>
+        <li class="t-shop"><span class="when">Late p.m.</span><div><h4>Hopson One <span class="zh">朝阳合生汇</span></h4><p>About 10 minutes by taxi. The mall young Beijingers use: trend and toy shops, snacks on every floor, and a three-level kids' play area. Pick up Lingcha or Yeye Bu Pao Cha milk tea.</p>{{go:朝阳合生汇|Hopson One, Chaoyang}}</div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>Hopson One's restaurant floors, or Zi Guang Yuan <span class="zh">紫光园</span></h4><p>Zi Guang Yuan is a Beijing halal chain: lamb and beef, no chilli. Pick the nearest branch.</p>{{go:紫光园|Zi Guang Yuan}}</div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Heavy rain on the Wall</span><b>Swap Day 2 and stay in the city</b>The Wall is slippery and the toboggan closes in rain. Spend the day at Hopson One and the Kerry pool, and try the Wall another morning if a day frees up.</li>
+        <li><span class="why">Lunch in the village</span><b>The Schoolhouse at Mutianyu</b>A long-running restaurant in a converted village school, with Western and Chinese dishes.{{go:慕田峪村|Mutianyu village}}</li>
+        <li><span class="why">Duck instead of halal</span><b>Siji Minfu <span class="zh">四季民福烤鸭店</span></b>Popular roast-duck chain with several Chaoyang branches. Expect a queue; take a number on the app.{{go:四季民福烤鸭店|Siji Minfu Roast Duck}}</li>
+      </ul></aside>
+      <p class="sleep"><span>Sleep</span><b>Kerry Hotel Beijing</b></p>
+    </article>
   </div>
 </section>
 
 <!-- CHAPTER 2 -->
 <section class="chapter" id="datong">
   <div class="wrap">
-    <div class="ch-hero rv">
-      <img src="{{src:datong-wall-moat}}-sm.jpg" srcset="img/datong-wall-moat-sm.jpg 900w, img/datong-wall-moat.jpg 1800w" sizes="(max-width:1160px) 100vw, 1112px" alt="Datong's city wall and towers above the moat and gardens" loading="lazy">
-      <span class="credit">xiquinhosilva, CC BY 4.0</span>
-      <div class="inner"><div class="han" aria-hidden="true">同</div><div><div class="num">Chapter two · Days 3–4</div><h2>Datong: walls, grottoes and palace nights</h2></div></div>
+    <div class="ch-hero">
+      <img src="{{src:datong-wall-moat}}-sm.jpg" srcset="img/datong-wall-moat-sm.jpg 900w, img/datong-wall-moat.jpg 1800w" sizes="(max-width:1080px) 100vw, 1032px" alt="Datong's city wall and towers above the moat and gardens" loading="lazy">
+      <div class="inner"><div class="han" aria-hidden="true">同</div><div><div class="num">Days 3–4</div><h2>Datong: walls, grottoes and palace nights</h2></div></div>
     </div>
-    <div class="ch-intro">
-      <p>An old imperial capital two hours west of Beijing, cooler in June, with the finest intact city wall you can ride on.</p>
-      <p class="stayline"><b>Stay:</b> Sunyata by Jixiashan, old city — 15–17 June</p>
-    </div>
+    <p class="stayline"><b>Sleep:</b> Sunyata by Jixiashan, old city · 15–17 June. Big bags stay at the Kerry.</p>
 
-    <div class="days">
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>3</div><div class="date">Tuesday 15 June</div></div>
-        <div class="body"><div>
-          <h3>Old city and a sunset wall ride</h3>
-          <p class="intro">High-speed train from Beijing, about 1.5–2 hours. Big bags stay at the Kerry.</p>
-          <dl>
-            <dt class="t-eat">Eat</dt><dd>Longjuxiang Shaomai by the Drum Tower for lunch. Early dinner at Zini 369.</dd>
-            <dt class="t-do">See</dt><dd>Huayan Temple and the glazed Nine-Dragon Wall.</dd>
-            <dt class="t-do">Do</dt><dd>Around 7pm, rent a six-seat bike at the East Gate and ride south along the wall as the sun sets.</dd>
-            <dt class="t-watch">Watch</dt><dd>South Gate performances — Mulan and a Northern Wei welcome ceremony.</dd>
-            <dt class="t-drink">Drink</dt><dd>Sea-buckthorn juice, Datong's local drink.</dd>
-          </dl>
-        </div>
-        <div class="shots rv">
-          {{fig:nine-dragon|Glazed tile dragons on Datong's Nine-Dragon Wall|The Nine-Dragon Wall, glazed in 1392}}
-          {{fig:huayan|A hall at Huayan Temple with a bare tree in the courtyard|Huayan Temple}}
-        </div></div>
-      </article>
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>4</div><div class="date">Wednesday 16 June</div></div>
-        <div class="body"><div>
-          <h3>Yungang Grottoes and a palace in costume</h3>
-          <p class="intro">An early start at one of Asia's great Buddhist sites, a rest, then a themed evening.</p>
-          <dl>
-            <dt class="t-do">See</dt><dd>Yungang Grottoes at 7:30 opening — hunt for the tiny Buddhas and try stone rubbing.</dd>
-            <dt class="t-eat">Eat</dt><dd>Fenglinge for lunch (sweet-and-sour meatballs, shaomai). Dinner at Tianyuan Beiwei Jiayan.</dd>
-            <dt class="t-do">Do</dt><dd>Hanfu costume and golden-hour photos at Daiwangfu, the Ming prince's palace.</dd>
-            <dt class="t-watch">Watch</dt><dd>Daiwangfu's evening show, <em>Tianxia Datong</em>.</dd>
-          </dl>
-        </div>
-        <div class="shots rv">
-          {{fig:yungang|The great seated Buddha of Cave 20 at Yungang|Cave 20, the Great Buddha of Yungang}}
-          {{fig:yungang-buddha|A painted Buddha inside a Yungang cave|Colour still survives inside the caves}}
-        </div></div>
-      </article>
-    </div>
+    <article class="day" id="d3" data-date="2027-06-15">
+      <header class="dh"><div class="num"><small>Day</small>3</div><div><div class="date">Tuesday 15 June<span class="todaytag">Today</span></div><h3>Old city and a sunset wall ride</h3><p>High-speed train from Beijing, about 1.5–2 hours. The wall ride runs past the kids' usual bedtime, so the afternoon nap matters.</p></div></header>
+      <div class="shots">{{fig:nine-dragon|Glazed tile dragons on Datong's Nine-Dragon Wall|The Nine-Dragon Wall, glazed in 1392}}{{fig:huayan|A hall at Huayan Temple with a bare tree in the courtyard|Huayan Temple}}{{fig:datong-wall-tower|A corner tower on Datong's restored Ming city wall|The wall you ride at sunset}}</div>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Breakfast</span><div><h4>Qingfeng Baozi <span class="zh">庆丰包子铺</span></h4><p>Beijing's classic steamed-bun chain, branches all over the CBD. Pork-and-scallion buns; adults can try chaogan, a garlicky braised liver stew.</p>{{go:庆丰包子铺|Qingfeng Steamed Buns}}</div></li>
+        <li class="t-tip"><span class="when">Train</span><div><h4>Beijing → Datong, 1.5–2 h</h4><p>Check which Beijing station your ticket leaves from.</p></div></li>
+        <li class="t-eat"><span class="when">Lunch</span><div><h4>Longjuxiang Shaomai, by the Drum Tower</h4><p>Datong's thin-skinned shaomai. Open through the afternoon, so a late lunch off the train works.</p>{{go:大同鼓楼|Datong Drum Tower}}</div></li>
+        <li class="t-do"><span class="when">Afternoon</span><div><h4>Huayan Temple <span class="zh">华严寺</span> and the Nine-Dragon Wall <span class="zh">九龙壁</span></h4><p>Both in the old city, a short walk apart.</p>{{go:大同华严寺|Huayan Temple, Datong}}{{go:大同九龙壁|Nine-Dragon Wall, Datong}}</div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>Nap and tea at Sunyata</h4><p>Try sea-buckthorn juice, Datong's local drink, sold all over the old city.</p></div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>Zini 369</h4><p>Early, before the ride.</p></div></li>
+        <li class="t-do"><span class="when">~19:00</span><div><h4>Six-seat bike on the city wall, from the East Gate <span class="zh">和阳门</span></h4><p>Ride south along the wall top as the sun sets.</p>{{go:大同古城墙和阳门|Datong city wall, East Gate}}</div></li>
+        <li class="t-watch"><span class="when">Evening</span><div><h4>South Gate shows <span class="zh">永泰门</span></h4><p>Mulan and a Northern Wei welcome ceremony.</p>{{go:大同古城墙永泰门|Datong city wall, South Gate}}</div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Hot afternoon or rain</span><b>Datong Museum <span class="zh">大同市博物馆</span></b>Dinosaur fossils and Northern Wei treasures, indoors and air-conditioned. Closed Mondays, open Tuesday.{{go:大同市博物馆|Datong Museum}}</li>
+        <li><span class="why">One more temple, if they're keen</span><b>Shanhua Temple <span class="zh">善化寺</span></b>Quieter than Huayan, near the South Gate.{{go:大同善化寺|Shanhua Temple, Datong}}</li>
+        <li><span class="why">Too tired to ride</span><b>Walk the wall at the South Gate instead</b>Shorter, and you're already there for the show.</li>
+      </ul></aside>
+      <p class="sleep"><span>Sleep</span><b>Sunyata by Jixiashan</b></p>
+    </article>
+
+    <article class="day" id="d4" data-date="2027-06-16">
+      <header class="dh"><div class="num"><small>Day</small>4</div><div><div class="date">Wednesday 16 June<span class="todaytag">Today</span></div><h3>Yungang Grottoes and a palace in costume</h3><p>An early start at one of Asia's great Buddhist sites, a long rest, then an early dinner before the evening.</p></div></header>
+      <div class="shots">{{fig:yungang|The great seated Buddha of Cave 20 at Yungang|Cave 20, the Great Buddha}}{{fig:yungang-buddha|A painted Buddha inside a Yungang cave|Colour still survives inside}}{{fig:daiwangfu|Glazed dragon screen and stone lion at the gate of Daiwangfu, Datong|Daiwangfu, the Ming prince's palace}}</div>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">06:45</span><div><h4>Breakfast at Sunyata</h4><p>Ask the night before for 6:45 breakfast or a breakfast box. Yungang is about 30 minutes by car.</p></div></li>
+        <li class="t-do"><span class="when">07:30</span><div><h4>Yungang Grottoes <span class="zh">云冈石窟</span></h4><p>Be there at opening, before the heat and the tour groups. Hunt for the tiny Buddhas and try stone rubbing.</p>{{go:云冈石窟|Yungang Grottoes}}</div></li>
+        <li class="t-eat"><span class="when">Lunch</span><div><h4>Fenglinge <span class="zh">凤临阁</span></h4><p>11:00–14:00 in the old city. Sweet-and-sour meatballs and "hundred-flower" shaomai; knife-cut noodles in pork broth for the kids.</p>{{go:大同凤临阁|Fenglinge, Datong}}</div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>Afternoon at the hotel</h4><p>Snack: fried yellow-millet cakes (油炸糕) from an old-city stall.</p></div></li>
+        <li class="t-eat"><span class="when">17:00</span><div><h4>Tianyuan Beiwei Jiayan</h4><p>Early dinner at a well-reviewed local Shanxi kitchen.</p></div></li>
+        <li class="t-do"><span class="when">Golden hour</span><div><h4>Hanfu costume at Daiwangfu <span class="zh">代王府</span></h4><p>Dress up and take photos in the Ming prince's palace.</p>{{go:大同代王府|Daiwangfu, Datong}}</div></li>
+        <li class="t-watch"><span class="when">Evening</span><div><h4><em>Tianxia Datong</em> show at Daiwangfu</h4><p>Check the start time locally.</p></div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">A bigger day out</span><b>Hanging Temple <span class="zh">悬空寺</span></b>A temple pinned to a cliff face, about 1.5 hours by car. Only if you swap out the afternoon rest.{{go:悬空寺|Hanging Temple}}</li>
+        <li><span class="why">Kids done with temples</span><b>Datong Museum <span class="zh">大同市博物馆</span></b>Dinosaur hall, indoors.{{go:大同市博物馆|Datong Museum}}</li>
+      </ul></aside>
+      <div class="shots">{{fig:hanging-temple|The Hanging Temple built into a cliff face near Datong|The Hanging Temple, if you have a spare half-day}}</div>
+      <p class="sleep"><span>Sleep</span><b>Sunyata by Jixiashan</b></p>
+    </article>
   </div>
 </section>
 
 <!-- CHAPTER 3 -->
 <section class="chapter" id="imperial">
   <div class="wrap">
-    <div class="ch-hero rv">
-      <img src="{{src:corner-tower}}-sm.jpg" srcset="img/corner-tower-sm.jpg 900w, img/corner-tower.jpg 1800w" sizes="(max-width:1160px) 100vw, 1112px" alt="A corner tower of the Forbidden City reflected in the moat under a stormy sky" loading="lazy">
-      <span class="credit">kallgan, CC BY-SA 3.0</span>
-      <div class="inner"><div class="han" aria-hidden="true">宫</div><div><div class="num">Chapter three · Days 5–9</div><h2>Imperial and creative Beijing</h2></div></div>
+    <div class="ch-hero">
+      <img src="{{src:corner-tower}}-sm.jpg" srcset="img/corner-tower-sm.jpg 900w, img/corner-tower.jpg 1800w" sizes="(max-width:1080px) 100vw, 1032px" alt="A corner tower of the Forbidden City reflected in the moat" loading="lazy">
+      <div class="inner"><div class="han" aria-hidden="true">宫</div><div><div class="num">Days 5–8</div><h2>Imperial and creative Beijing</h2></div></div>
     </div>
-    <div class="ch-intro">
-      <p>Five nights in the heart of the old city: palaces and temples, a hot-spring day, an immersive quest world, art, go and kung fu.</p>
-      <p class="stayline"><b>Stay:</b> The PuXuan, Dongcheng — 17–22 June</p>
-    </div>
+    <p class="stayline"><b>Sleep:</b> The PuXuan, Dongcheng · 17–21 June</p>
 
-    <div class="days">
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>5</div><div class="date">Thursday 17 June</div></div>
-        <div class="body noshots"><div>
-          <h3>Back to Beijing, into the hot springs</h3>
-          <dl>
-            <dt class="t-eat">Eat</dt><dd>Breakfast noodles at Laochai Xiaomian before the train.</dd>
-            <dt class="t-do">Do</dt><dd>Jiuhao Hot Spring — one ticket covers the pools, buffet meals and an all-day kids' play area. Bring swimwear.</dd>
-          </dl>
-        </div></div>
-      </article>
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>6</div><div class="date">Friday 18 June</div></div>
-        <div class="body"><div>
-          <h3>The Forbidden City</h3>
-          <p class="intro">A weekday visit, walking straight from the hotel.</p>
-          <dl>
-            <dt class="t-do">See</dt><dd>The palace from south to north, then the view over its roofs from Jingshan.</dd>
-            <dt class="t-drink">Drink</dt><dd>Palace-themed drinks at Corner Tower Café; Wuyutai jasmine-tea ice cream.</dd>
-            <dt class="t-eat">Eat</dt><dd>Cuihualou (Shandong cuisine, since 1940) for lunch. Dinner at <b>Fu Chun Ju</b>, the hotel's Michelin-starred restaurant.</dd>
-            <dt class="t-shop">Shop</dt><dd>Daoxiangcun Treasure-Hunt Store at Longfu Temple.</dd>
-          </dl>
-        </div>
-        <div class="shots rv">
-          {{fig:jingshan-view|The golden roofs of the Forbidden City seen from Jingshan hill|The view from Jingshan}}
-        </div></div>
-      </article>
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>7</div><div class="date">Saturday 19 June</div></div>
-        <div class="body"><div>
-          <h3>798 Art District and Sanlitun</h3>
-          <dl>
-            <dt class="t-do">See</dt><dd>Immersive shows at Meet Museum, UCCA, and independent design shops.</dd>
-            <dt class="t-eat">Eat</dt><dd>Cantonese claypot rice at Kuanfan. Dinner on Guijie — Hu Da and crayfish (order some mild).</dd>
-            <dt class="t-drink">Drink</dt><dd>Amo's Beijing-only douzhi drink in Sanlitun.</dd>
-          </dl>
-        </div>
-        <div class="shots rv">
-          {{fig:798|A gallery inside a former factory hall with arched roof at 798|Factory halls turned galleries at 798}}
-        </div></div>
-      </article>
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>8</div><div class="date">Sunday 20 June</div></div>
-        <div class="body"><div>
-          <h3>Temple of Heaven, weiqi and kung fu</h3>
-          <p class="intro">Old Beijing at its liveliest on a Sunday.</p>
-          <dl>
-            <dt class="t-do">See</dt><dd>Temple of Heaven early, when locals do tai chi and fly kites.</dd>
-            <dt class="t-eat">Eat</dt><dd>Copper-pot mutton hotpot at the founding branch of Jubaoyuan, Niujie.</dd>
-            <dt class="t-do">Do</dt><dd>Taoranting Park's weiqi corner — boards and stones provided, walk up and play.</dd>
-            <dt class="t-drink">Drink</dt><dd>Chengcha teahouse in the park.</dd>
-            <dt class="t-watch">Watch</dt><dd><b>The Legend of Kung Fu</b> at the Red Theatre, by the Temple of Heaven's east gate.</dd>
-          </dl>
-        </div>
-        <div class="shots rv">
-          {{fig:temple-heaven|The Hall of Prayer for Good Harvests at the Temple of Heaven|The Hall of Prayer for Good Harvests}}
-        </div></div>
-      </article>
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>9</div><div class="date">Monday 21 June</div></div>
-        <div class="body"><div>
-          <h3>Day trip to Tianjin</h3>
-          <p class="intro">Thirty minutes by train, while Beijing's museums take their Monday off.</p>
-          <dl>
-            <dt class="t-eat">Eat</dt><dd>Jianbing guozi from a street stall in its hometown. Lunch at Kiessling, a Western restaurant dating to around 1900.</dd>
-            <dt class="t-do">See</dt><dd>Italian Style Town, Zhongshuge bookstore, the Porcelain House, and Wudadao by horse carriage.</dd>
-            <dt class="t-shop">Shop</dt><dd>Guifaxiang mahua — Tianjin's famous twisted dough to take home.</dd>
-          </dl>
-        </div>
-        <div class="shots two rv">
-          {{fig:porcelain-house|The Porcelain House in Tianjin, its facade covered in porcelain shards|The Porcelain House}}
-          {{fig:jianbing|A street vendor making jianbing guozi on a griddle in Tianjin|Morning jianbing, Tianjin}}
-        </div></div>
-      </article>
-    </div>
+    <article class="day" id="d5" data-date="2027-06-17">
+      <header class="dh"><div class="num"><small>Day</small>5</div><div><div class="date">Thursday 17 June<span class="todaytag">Today</span></div><h3>Back to Beijing, into the quest world</h3><p>The quest world, a snack stop and a bakery all sit on the drive from the north-side stations to the PuXuan, so nothing doubles back.</p></div></header>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Breakfast</span><div><h4>Laochai Xiaomian</h4><p>Opens 06:30. Knife-cut noodles before the train.</p></div></li>
+        <li class="t-tip"><span class="when">Train</span><div><h4>Datong → Beijing</h4><p>Most trains arrive at Qinghe or Beijing North; check yours. Book a car for the afternoon: it keeps the bags while you play, then drives on to the PuXuan.</p></div></li>
+        <li class="t-do"><span class="when">Afternoon</span><div><h4>Together Fantasy City, Beitou Shopping Park <span class="zh">北投购物公园</span></h4><p>Beside the Olympic Park: an immortals-and-alchemy world with quests, codes and prizes. Bring non-slip socks. The mall is full of trend-toy shops.</p>{{go:北投购物公园|Beitou Shopping Park}}</div></li>
+        <li class="t-eat"><span class="when">Lunch</span><div><h4>In the same mall</h4><p>Pick on Dianping on the day.</p></div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>Huguosi Snacks, Di'anmen <span class="zh">护国寺小吃 地安门店</span></h4><p>06:00–20:30. Low-sugar Beijing pastries and naipizi, a milk-skin yogurt.</p>{{go:护国寺小吃地安门店|Huguosi Snacks, Di'anmen}}</div></li>
+        <li class="t-shop"><span class="when">On the way</span><div><h4>Daoxiangcun Treasure-Hunt Store, Longfu Temple <span class="zh">稻香村 隆福寺</span></h4><p>Beijing pastries in novelty boxes. The last stop before the hotel.</p>{{go:隆福寺稻香村|Daoxiangcun, Longfu Temple}}</div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>Hen Jiu Yi Qian, Wangfujing APM <span class="zh">很久以前羊肉串</span></h4><p>A short walk from the PuXuan. The chain started in Beijing; close enough to come back another evening.</p>{{go:很久以前羊肉串 王府井apm|Hen Jiu Yi Qian, Wangfujing APM}}</div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Quest world sold out or closed</span><b>China Science and Technology Museum <span class="zh">中国科学技术馆</span></b>In the same Olympic Park area. Hands-on halls and a children's science park. Closed Mondays; book a time slot.{{go:中国科学技术馆|China Science and Technology Museum}}</li>
+        <li><span class="why">A run-around before the car</span><b>Olympic Park and the Bird's Nest <span class="zh">奥林匹克公园</span></b>Open space and photos outside the stadium.{{go:奥林匹克公园|Olympic Park}}</li>
+      </ul></aside>
+      <div class="shots">{{fig:science-museum|The China Science and Technology Museum building in Beijing|Science museum, the rainy-day swap}}</div>
+      <p class="sleep"><span>Sleep</span><b>The PuXuan</b></p>
+    </article>
+
+    <article class="day" id="d6" data-date="2027-06-18">
+      <header class="dh"><div class="num"><small>Day</small>6</div><div><div class="date">Friday 18 June<span class="todaytag">Today</span></div><h3>The Forbidden City</h3><p>Walk from the hotel. You enter from the south (Meridian Gate) and leave by the north, so the day flows one way. Bring passports: tickets are real-name.</p></div></header>
+      <div class="shots">{{fig:jingshan-view|The golden roofs of the Forbidden City seen from Jingshan hill|The view from Jingshan}}{{fig:corner-tower|A corner tower of the Forbidden City reflected in the moat|The Corner Tower, beside the café}}</div>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Breakfast</span><div><h4>At the PuXuan</h4><p>The palace opens at 8:30. The walk to the south entrance takes about 20 minutes.</p></div></li>
+        <li class="t-do"><span class="when">08:30</span><div><h4>Forbidden City, Meridian Gate <span class="zh">故宫博物院 午门</span></h4><p>South to north through the palace.</p>{{go:故宫博物院午门|Forbidden City, Meridian Gate}}</div></li>
+        <li class="t-do"><span class="when">Then</span><div><h4>Jingshan Park <span class="zh">景山公园</span></h4><p>Just outside the north exit. Climb for the view over the palace roofs.</p>{{go:景山公园|Jingshan Park}}</div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>Corner Tower Café <span class="zh">角楼咖啡</span></h4><p>Just west of the north exit (Shenwu Gate). Palace-themed drinks and the matcha-peach "Thousand Miles of Mountains and Rivers" roll.</p>{{go:故宫角楼咖啡|Corner Tower Café}}</div></li>
+        <li class="t-eat"><span class="when">Lunch</span><div><h4>Cuihualou, Wangfujing <span class="zh">萃华楼</span></h4><p>Shandong cooking since 1940. A short taxi from Jingshan.</p>{{go:萃华楼 王府井|Cuihualou, Wangfujing}}</div></li>
+        <li class="t-do"><span class="when">After lunch</span><div><h4>Rest at the PuXuan</h4></div></li>
+        <li class="t-shop"><span class="when">Late p.m.</span><div><h4>Wangfujing Xiyue, B2 <span class="zh">王府井喜悦</span></h4><p>Walk down Wangfujing to the south end. B2 has around 30 small anime and game shops: badges, plush and cards, mostly ¥15–30. Wuyutai jasmine-tea ice cream on the way.</p>{{go:王府井喜悦|Wangfujing Xiyue}}</div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>Fu Chun Ju, at the PuXuan</h4><p>The hotel's Michelin-starred restaurant.</p></div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Kids need open space</span><b>Beihai Park <span class="zh">北海公园</span></b>West of Jingshan. Pedal boats on the lake below the White Dagoba.{{go:北海公园|Beihai Park}}</li>
+        <li><span class="why">Lunch nearer the palace</span><b>Siji Minfu, Forbidden City branch <span class="zh">四季民福烤鸭店 故宫店</span></b>Roast duck by the east gate of the palace. Queue numbers go fast.{{go:四季民福烤鸭店 故宫店|Siji Minfu, Forbidden City branch}}</li>
+      </ul></aside>
+      <div class="shots">{{fig:beihai|The White Dagoba on Jade Island above Beihai Lake|Beihai Park}}</div>
+      <p class="sleep"><span>Sleep</span><b>The PuXuan</b></p>
+    </article>
+
+    <article class="day" id="d7" data-date="2027-06-19">
+      <header class="dh"><div class="num"><small>Day</small>7</div><div><div class="date">Saturday 19 June<span class="todaytag">Today</span></div><h3>798 Art District and Sanlitun</h3><p>Galleries open about 10:00 and most close on Mondays, so Saturday works.</p></div></header>
+      <div class="shots">{{fig:798|A gallery inside a former factory hall with arched roof at 798|Factory halls turned galleries}}{{fig:sanlitun|The central square of Sanlitun Taikoo Li South|Sanlitun Taikoo Li South}}</div>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Breakfast</span><div><h4>Zengshengkui <span class="zh">增盛魁</span></h4><p>26 Dafosi East Street, about 15 minutes' walk. Old halal snack shop: sugar-oil pancake (糖油饼), savoury tofu pudding, beef "door-nail" pies. About ¥10 a head.</p>{{go:增盛魁|Zengshengkui}}</div></li>
+        <li class="t-do"><span class="when">10:00</span><div><h4>798 Art District <span class="zh">798艺术区</span></h4><p>Immersive shows at Meet Museum, UCCA and independent design shops.</p>{{go:798艺术区|798 Art District}}</div></li>
+        <li class="t-eat"><span class="when">Lunch</span><div><h4>Kuanfan (Green Oxygen Space)</h4><p>Cantonese claypot rice in a room full of plants, inside 798.</p></div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>Stay on at Kuanfan</h4><p>Snow-skin mochi (冰皮雪媚娘).</p></div></li>
+        <li class="t-do"><span class="when">Afternoon</span><div><h4>Rest at the PuXuan</h4></div></li>
+        <li class="t-shop"><span class="when">Before dinner</span><div><h4>Sanlitun Taikoo Li South <span class="zh">三里屯太古里南区</span></h4><p>Trend shops and mainstream brands. Skip the luxury North side.</p>{{go:三里屯太古里南区|Sanlitun Taikoo Li South}}</div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>Xiaodiao Litang, Sanlitun flagship <span class="zh">小吊梨汤</span></h4><p>Opera-themed, opened September 2026. Pear soup poured from copper pots, the milk "cheese fish" dessert, and palace desserts. Jasmine-roast duck is the signature.</p>{{go:小吊梨汤 三里屯|Xiaodiao Litang, Sanlitun}}</div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Galleries too grown-up</span><b>Chaoyang Park <span class="zh">朝阳公园</span></b>Big lawns, a lake and rides. Between 798 and Sanlitun.{{go:朝阳公园|Chaoyang Park}}</li>
+        <li><span class="why">Sweet stop in Sanlitun</span><b>Tanghulu from a street stall</b>Candied hawthorn on a stick, the classic Beijing treat.</li>
+      </ul></aside>
+      <p class="sleep"><span>Sleep</span><b>The PuXuan</b></p>
+    </article>
+
+    <article class="day" id="d8" data-date="2027-06-20">
+      <header class="dh"><div class="num"><small>Day</small>8</div><div><div class="date">Sunday 20 June<span class="todaytag">Today</span></div><h3>Weiqi, the Temple of Heaven and kung fu</h3><p>A free morning, then one sweep: lunch and weiqi in the west, east to the Temple, the show next door, dinner on the way back.</p></div></header>
+      <div class="shots">{{fig:taoranting|People relaxing by the lake under willows in Taoranting Park, Beijing|Taoranting Park}}{{fig:temple-heaven|The Hall of Prayer for Good Harvests at the Temple of Heaven|The Hall of Prayer for Good Harvests}}{{fig:kungfu|Martial artists in a stage kung fu performance|The Legend of Kung Fu}}</div>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Morning</span><div><h4>Slow breakfast at the PuXuan, then the pool</h4></div></li>
+        <li class="t-eat"><span class="when">11:00</span><div><h4>Jubaoyuan, Niujie <span class="zh">聚宝源 牛街</span></h4><p>Copper-pot mutton hotpot at the founding branch. Clear broth, no chilli. Arrive by 11:00 to beat the queue.</p>{{go:聚宝源 牛街|Jubaoyuan, Niujie}}</div></li>
+        <li class="t-do"><span class="when">12:30</span><div><h4>Weiqi corner, Taoranting Park <span class="zh">陶然亭公园</span></h4><p>Until about 14:30; weekend afternoons are busiest. Enter by the north gate and walk south on the main path to the covered corridor by the boat pier. Children and retirees pair up and play. Bring mosquito repellent.</p>{{go:陶然亭公园北门|Taoranting Park, North Gate}}</div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>Chengcha teahouse, inside Taoranting Park</h4></div></li>
+        <li class="t-do"><span class="when">15:00</span><div><h4>Temple of Heaven, West Gate <span class="zh">天坛公园 西门</span></h4><p>Through the Hall of Prayer for Good Harvests, out by the East Gate by 16:45. The halls close around 17:00. Drop this part if the kids are flagging.</p>{{go:天坛公园西门|Temple of Heaven, West Gate}}</div></li>
+        <li class="t-drink rest"><span class="when">Treat</span><div><h4>Weiduomei, Temple of Heaven bakery <span class="zh">味多美 天坛</span></h4><p>Across the road from the East Gate. Tanghulu croissant, ludagun croissant, and a strawberry cake in an enamel mug you keep.</p>{{go:味多美 天坛东门|Weiduomei, Temple of Heaven East Gate}}</div></li>
+        <li class="t-watch"><span class="when">17:15</span><div><h4><em>The Legend of Kung Fu</em>, Red Theatre <span class="zh">红剧场</span></h4><p>A few minutes from the East Gate. Book the earlier show (it has run at 17:15 and 19:30).</p>{{go:红剧场|Red Theatre}}</div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>Da Dong, Nanxincang flagship <span class="zh">美·大董 南新仓</span></h4><p>About 15 minutes by taxi, on the way back. Michelin one-star, family-friendly, lean crisp roast duck. Book for after the show.</p>{{go:大董 南新仓|Da Dong, Nanxincang}}</div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Rain at Taoranting</span><b>Skip weiqi; go straight to the Temple of Heaven</b>The long corridor in the Temple grounds is covered, and locals play cards and chess there too.</li>
+        <li><span class="why">Toys near the East Gate</span><b>Hongqiao Market <span class="zh">红桥市场</span></b>Opposite the East Gate. Toys, pearls and souvenirs; bargain hard.{{go:红桥市场|Hongqiao Market}}</li>
+        <li><span class="why">Kung fu show sold out</span><b>Take the 19:30 show</b>Eat at Da Dong first instead.</li>
+      </ul></aside>
+      <div class="shots">{{fig:duck|Sliced Peking roast duck with pancakes and sauce|Roast duck to end the day}}</div>
+      <p class="sleep"><span>Sleep</span><b>The PuXuan</b></p>
+    </article>
   </div>
 </section>
 
 <!-- CHAPTER 4 -->
 <section class="chapter" id="aranya">
   <div class="wrap">
-    <div class="ch-hero rv">
-      <img src="{{src:bohai-beach}}-sm.jpg" srcset="img/bohai-beach-sm.jpg 900w, img/bohai-beach.jpg 1800w" sizes="(max-width:1160px) 100vw, 1112px" alt="Aerial view of the long Golden Beach along the Bohai Sea near Aranya" loading="lazy">
-      <span class="credit">Golden Beach, Changli · Charlie fong, CC BY-SA 4.0</span>
-      <div class="inner"><div class="han" aria-hidden="true">海</div><div><div class="num">Chapter four · Days 10–11</div><h2>Aranya: art by the sea</h2></div></div>
+    <div class="ch-hero">
+      <img src="{{src:bohai-beach}}-sm.jpg" srcset="img/bohai-beach-sm.jpg 900w, img/bohai-beach.jpg 1800w" sizes="(max-width:1080px) 100vw, 1032px" alt="Aerial view of the long beach along the Bohai Sea near Aranya" loading="lazy">
+      <div class="inner"><div class="han" aria-hidden="true">海</div><div><div class="num">Days 9–10</div><h2>Tianjin, then Aranya by the sea</h2></div></div>
     </div>
-    <div class="ch-intro">
-      <p>A seaside community known for its architecture — timed for its summer theatre festival, when performances spill onto the beach.</p>
-      <p class="stayline"><b>Stay:</b> Aranya Lanxi — 22–24 June</p>
-    </div>
+    <p class="stayline"><b>Sleep:</b> Aranya Lanxi · 21–23 June</p>
 
-    <div class="days">
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>10</div><div class="date">Tuesday 22 June</div></div>
-        <div class="body noshots"><div>
-          <h3>A quest world, then the coast</h3>
-          <dl>
-            <dt class="t-do">Do</dt><dd>Together Fantasy City — an immersive immortals-and-alchemy world with quests, codes and prizes. Bring non-slip socks.</dd>
-            <dt class="t-eat">Eat</dt><dd>Xiaodiao Litang in the same mall for lunch. Dinner at Changji Seafood in Aranya.</dd>
-            <dt class="t-tip">Travel</dt><dd>Afternoon train from Beijing Chaoyang, about 2.5 hours plus a 40-minute transfer.</dd>
-            <dt class="t-watch">Watch</dt><dd>The first festival evening, then Breeze Bar by the seaside auditorium.</dd>
-          </dl>
-        </div></div>
-      </article>
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>11</div><div class="date">Wednesday 23 June</div></div>
-        <div class="body noshots"><div>
-          <h3>Library, chapel and festival</h3>
-          <dl>
-            <dt class="t-do">See</dt><dd>The Lonely Library and Seashore Chapel in morning light, then UCCA Dune, a gallery set into the sand.</dd>
-            <dt class="t-eat">Eat</dt><dd>NINER'S American diner for lunch. Flower crab at Wuji Yugang for dinner, and late-night instant noodles at Suka — an Aranya ritual.</dd>
-            <dt class="t-shop">Shop</dt><dd>XXSHOKU bakery — egg tarts and pineapple cakes.</dd>
-            <dt class="t-watch">Watch</dt><dd>Outdoor festival performances, parades and street installations.</dd>
-          </dl>
-        </div></div>
-      </article>
-    </div>
+    <article class="day" id="d9" data-date="2027-06-21">
+      <header class="dh"><div class="num"><small>Day</small>9</div><div><div class="date">Monday 21 June<span class="todaytag">Today</span></div><h3>Tianjin on the way to the sea</h3><p>30 minutes from Beijing South to Tianjin. Then about 1.5–2 hours on to Beidaihe and a 40-minute transfer to Aranya.</p></div></header>
+      <div class="shots">{{fig:italian-town|Italian Style Town in Tianjin|Italian Style Town}}{{fig:jianbing|A street vendor making jianbing guozi on a griddle in Tianjin|Morning jianbing}}</div>
+      <ol class="plan">
+        <li class="t-tip"><span class="when">Morning</span><div><h4>Train to Tianjin, then a car and driver</h4><p>The bags stay in the boot, and the driver drops you for a mid-afternoon train to Beidaihe. Check the timetable once it opens.</p></div></li>
+        <li class="t-eat"><span class="when">Breakfast</span><div><h4>Jianbing guozi from a street stall</h4><p>Tianjin's own breakfast crêpe, in its hometown.</p></div></li>
+        <li class="t-do"><span class="when">Late a.m.</span><div><h4>Wudadao by horse carriage <span class="zh">五大道</span></h4><p>Streets of old European villas. Add the Porcelain House <span class="zh">瓷房子</span> only if everyone has energy (check Monday opening).</p>{{go:五大道|Wudadao, Tianjin}}</div></li>
+        <li class="t-eat"><span class="when">Lunch</span><div><h4>Kiessling, Xiaobailou <span class="zh">起士林 小白楼</span></h4><p>Tianjin's oldest Western restaurant: pot-roasted beef, pork knuckle and chestnut cake.</p>{{go:起士林 小白楼|Kiessling, Xiaobailou}}</div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>Minyuan Square <span class="zh">民园广场</span></h4><p>The old stadium at the heart of Wudadao, with cafés around the track.</p>{{go:民园广场|Minyuan Square}}</div></li>
+        <li class="t-do"><span class="when">If time</span><div><h4>Italian Style Town <span class="zh">意式风情区</span></h4>{{go:意式风情区|Italian Style Town, Tianjin}}</div></li>
+        <li class="t-shop"><span class="when">At the station</span><div><h4>Guifaxiang mahua <span class="zh">桂发祥十八街麻花</span></h4><p>Tianjin's famous twisted dough. Buy it at Tianjin Station before the train.</p>{{go:天津站|Tianjin Station}}</div></li>
+        <li class="t-tip"><span class="when">Afternoon</span><div><h4>Train to Beidaihe <span class="zh">北戴河站</span>, then 40 min to Aranya</h4>{{go:北戴河站|Beidaihe Station}}</div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>Changji Seafood, Aranya</h4><p>Then the first festival evening if the kids are up for it; otherwise an early night by the sea.</p></div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Rain in Tianjin</span><b>Tianjin Eye <span class="zh">天津之眼</span></b>A Ferris wheel built on a bridge over the Hai River. Enclosed cabins, about 30 minutes a turn.{{go:天津之眼|Tianjin Eye}}</li>
+        <li><span class="why">Souvenirs and snacks</span><b>Ancient Culture Street <span class="zh">古文化街</span></b>Clay figurines, kites and snack stalls, near the Tianjin Eye.{{go:天津古文化街|Ancient Culture Street, Tianjin}}</li>
+        <li><span class="why">Running late</span><b>Skip Italian Style Town</b>Lunch at Kiessling and Minyuan Square are enough.</li>
+      </ul></aside>
+      <div class="shots">{{fig:tianjin-eye|The Tianjin Eye Ferris wheel over the Hai River|The Tianjin Eye}}</div>
+      <p class="sleep"><span>Sleep</span><b>Aranya Lanxi</b></p>
+    </article>
+
+    <article class="day" id="d10" data-date="2027-06-22">
+      <header class="dh"><div class="num"><small>Day</small>10</div><div><div class="date">Tuesday 22 June<span class="todaytag">Today</span></div><h3>Library, chapel and festival</h3><p>A full day by the sea, timed for Aranya's summer theatre festival.</p></div></header>
+      <div class="shots">{{fig:beidaihe-dusk|Pink evening sky over the Bohai Sea near Beidaihe|Evening over the Bohai Sea}}</div>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Breakfast</span><div><h4>At Aranya Lanxi, by the sea</h4></div></li>
+        <li class="t-do"><span class="when">Morning</span><div><h4>Lonely Library <span class="zh">孤独图书馆</span> and Seashore Chapel <span class="zh">阿那亚礼堂</span></h4><p>Best in morning light. Then UCCA Dune <span class="zh">UCCA沙丘美术馆</span>, a gallery set into the sand.</p>{{go:阿那亚孤独图书馆|Lonely Library, Aranya}}{{go:UCCA沙丘美术馆|UCCA Dune}}</div></li>
+        <li class="t-eat"><span class="when">Lunch</span><div><h4>NINER'S American diner</h4></div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>POP BAKERY, Phase 6 creative street</h4><p>Pop Mart's dessert shop: character ice creams and drinks around ¥28–38, with a Pop Mart shop next door.</p></div></li>
+        <li class="t-shop"><span class="when">Shop</span><div><h4>XXSHOKU bakery</h4><p>Egg tarts and pineapple cakes. Buy extra for tomorrow's train.</p></div></li>
+        <li class="t-watch"><span class="when">Evening</span><div><h4>Festival performances</h4><p>Outdoor shows, parades and street installations, then Breeze Bar by the seaside auditorium.</p></div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>Flower crab at Wuji Yugang</h4><p>Ask for it steamed. Then instant noodles at Suka, an Aranya ritual; go before the kids' bedtime.</p></div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Kids want animals</span><b>Qinhuangdao Wildlife Park <span class="zh">秦皇岛野生动物园</span></b>Drive-through safari and animal shows near Beidaihe, about 40 minutes away. Half a day.{{go:秦皇岛野生动物园|Qinhuangdao Wildlife Park}}</li>
+        <li><span class="why">Early risers</span><b>Pigeon Nest Park, Beidaihe <span class="zh">鸽子窝公园</span></b>The classic sunrise spot on this coast.{{go:鸽子窝公园|Pigeon Nest Park, Beidaihe}}</li>
+        <li><span class="why">Hot, or nothing on</span><b>Beach and pool time</b>The long beach runs right past the hotel.</li>
+      </ul></aside>
+      <p class="sleep"><span>Sleep</span><b>Aranya Lanxi</b></p>
+    </article>
   </div>
 </section>
 
 <!-- CHAPTER 5 -->
 <section class="chapter" id="universal">
   <div class="wrap">
-    <div class="ch-hero rv">
-      <img src="{{src:universal-entrance}}-sm.jpg" srcset="img/universal-entrance-sm.jpg 900w, img/universal-entrance.jpg 1800w" sizes="(max-width:1160px) 100vw, 1112px" alt="The entrance plaza of Universal Studios Beijing under a blue sky" loading="lazy">
-      <span class="credit">N509FZ, CC BY-SA 4.0</span>
-      <div class="inner"><div class="han" aria-hidden="true">乐</div><div><div class="num">Chapter five · Days 12–14</div><h2>Universal Beijing to finish</h2></div></div>
+    <div class="ch-hero">
+      <img src="{{src:universal-entrance}}-sm.jpg" srcset="img/universal-entrance-sm.jpg 900w, img/universal-entrance.jpg 1800w" sizes="(max-width:1080px) 100vw, 1032px" alt="The entrance plaza of Universal Studios Beijing" loading="lazy">
+      <div class="inner"><div class="han" aria-hidden="true">乐</div><div><div class="num">Days 11–13</div><h2>A hot spring, then Universal to finish</h2></div></div>
     </div>
-    <div class="ch-intro">
-      <p>The children's big finale — and the last hotel is close to Capital Airport, so the final night is for packing, not transit.</p>
-      <p class="stayline"><b>Stay:</b> Universal Studios Grand Hotel — 24–26 June</p>
-    </div>
+    <p class="stayline"><b>Sleep:</b> Universal Studios Grand Hotel · 23–25 June</p>
 
-    <div class="days">
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>12</div><div class="date">Thursday 24 June</div></div>
-        <div class="body noshots"><div>
-          <h3>From the sea to the park</h3>
-          <dl>
-            <dt class="t-do">Do</dt><dd>A slow morning by the sea, then the train to Beijing and a short drive to Universal.</dd>
-            <dt class="t-eat">Eat</dt><dd>Dinner at Universal CityWalk.</dd>
-          </dl>
-        </div></div>
-      </article>
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>13</div><div class="date">Friday 25 June</div></div>
-        <div class="body"><div>
-          <h3>Universal Beijing Resort</h3>
-          <dl>
-            <dt class="t-do">Do</dt><dd>Early entry for hotel guests: Kung Fu Panda Land of Awesomeness, Transformers and Jurassic World.</dd>
-            <dt class="t-tip">Tip</dt><dd>Back at the hotel by early evening to pack.</dd>
-          </dl>
-        </div>
-        <div class="shots two rv">
-          {{fig:universal-optimus|A giant Optimus Prime statue at Transformers Metrobase|Transformers Metrobase}}
-          {{fig:universal-panda|Kung Fu Panda Land lit up at night|Kung Fu Panda Land}}
-        </div></div>
-      </article>
-      <article class="day">
-        <div class="when"><div class="num"><small>Day</small>14</div><div class="date">Saturday 26 June</div></div>
-        <div class="body noshots"><div>
-          <h3>Fly home</h3>
-          <dl>
-            <dt class="t-tip">Travel</dt><dd>A short transfer to Beijing Capital International Airport (PEK).</dd>
-          </dl>
-        </div></div>
-      </article>
-    </div>
+    <article class="day" id="d11" data-date="2027-06-23">
+      <header class="dh"><div class="num"><small>Day</small>11</div><div><div class="date">Wednesday 23 June<span class="todaytag">Today</span></div><h3>From the sea to a hot spring</h3><p>A slow morning, the train back, and an afternoon soak on the way east to Universal.</p></div></header>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Breakfast</span><div><h4>By the sea, plus XXSHOKU egg tarts for the train</h4></div></li>
+        <li class="t-tip"><span class="when">Late a.m.</span><div><h4>Train to Beijing Chaoyang <span class="zh">北京朝阳站</span></h4><p>About 2.5 hours plus the 40-minute transfer. A pre-booked car takes you and the bags to the hot spring, then on to Universal.</p>{{go:北京朝阳站|Beijing Chaoyang Station}}</div></li>
+        <li class="t-do"><span class="when">Afternoon</span><div><h4>Jiuhao Hot Spring, Gaobeidian <span class="zh">瀚金佰九号温泉</span></h4><p>By the Tonghui River: pools, a kids' play area and rest lounges on one ticket. Quieter on a weekday. Bring swimwear.</p>{{go:瀚金佰九号温泉|Jiuhao Hot Spring}}</div></li>
+        <li class="t-eat"><span class="when">Dinner</span><div><h4>The hot spring buffet</h4><p>Included in the ticket. Plenty of cooked dishes, plus sashimi and oysters for anyone who eats raw.</p></div></li>
+        <li class="t-tip"><span class="when">Evening</span><div><h4>25–30 minutes to the Universal hotel</h4><p>Early night for early entry.</p>{{go:北京环球影城大酒店|Universal Studios Grand Hotel}}</div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Skip the hot spring</span><b>Universal CityWalk <span class="zh">北京环球城市大道</span></b>Free to enter, right by the hotel. Shops, restaurants and evening lights.{{go:北京环球城市大道|Universal CityWalk Beijing}}</li>
+        <li><span class="why">Outdoors instead</span><b>Grand Canal Forest Park <span class="zh">大运河森林公园</span></b>Bikes and boats along the canal in Tongzhou, near Universal.{{go:大运河森林公园|Grand Canal Forest Park}}</li>
+      </ul></aside>
+      <div class="shots">{{fig:citywalk|Overview of Universal CityWalk Beijing|Universal CityWalk}}</div>
+      <p class="sleep"><span>Sleep</span><b>Universal Studios Grand Hotel</b></p>
+    </article>
+
+    <article class="day" id="d12" data-date="2027-06-24">
+      <header class="dh"><div class="num"><small>Day</small>12</div><div><div class="date">Thursday 24 June<span class="todaytag">Today</span></div><h3>Universal Beijing Resort</h3><p>A Thursday, usually quieter than a Friday.</p></div></header>
+      <div class="shots">{{fig:universal-panda|Kung Fu Panda Land lit up at night|Kung Fu Panda Land}}{{fig:universal-optimus|A giant Optimus Prime statue at Transformers Metrobase|Transformers Metrobase}}</div>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Early</span><div><h4>Breakfast at the hotel</h4><p>Be at the gate for hotel-guest early entry.</p></div></li>
+        <li class="t-do"><span class="when">Opening</span><div><h4>Universal Beijing Resort <span class="zh">北京环球度假区</span></h4><p>Early entry: Kung Fu Panda Land of Awesomeness, Transformers and Jurassic World first.</p>{{go:北京环球影城|Universal Studios Beijing}}</div></li>
+        <li class="t-eat"><span class="when">Lunch</span><div><h4>Mr Ping's Noodle House, Kung Fu Panda Land</h4><p>Po's dad's noodles.</p></div></li>
+        <li class="t-drink rest"><span class="when">Rest stop</span><div><h4>Butterbeer in Hogsmeade</h4><p>Also frozen. And the Minion-shaped ice cream in Minion Land.</p></div></li>
+        <li class="t-eat"><span class="when">17:30</span><div><h4>Toothsome Chocolate Emporium, CityWalk</h4><p>Steampunk dining room, giant milkshakes, and characters who come to the table. Then back to pack.</p></div></li>
+      </ol>
+      <aside class="alt"><h4>Nearby &amp; plan B</h4><ul>
+        <li><span class="why">Long queues</span><b>Use the official app</b>Check live wait times and do the big rides at opening or in the last hour.</li>
+        <li><span class="why">Midday heat</span><b>Back to the hotel pool</b>The hotel is a short walk from the gate. Ask at the gate about re-entry before you leave.</li>
+      </ul></aside>
+      <p class="sleep"><span>Sleep</span><b>Universal Studios Grand Hotel</b></p>
+    </article>
+
+    <article class="day" id="d13" data-date="2027-06-25">
+      <header class="dh"><div class="num"><small>Day</small>13</div><div><div class="date">Friday 25 June<span class="todaytag">Today</span></div><h3>Fly home</h3><p>Pick a daytime flight so you're home before the kids' bedtime.</p></div></header>
+      <ol class="plan">
+        <li class="t-eat"><span class="when">Breakfast</span><div><h4>Lotus Garden, in the hotel</h4><p>The Minions drop by.</p></div></li>
+        <li class="t-tip"><span class="when">Transfer</span><div><h4>Beijing Capital International Airport (PEK) <span class="zh">北京首都国际机场</span></h4><p>A short transfer from Universal.</p>{{go:北京首都国际机场|Beijing Capital International Airport}}</div></li>
+      </ol>
+    </article>
   </div>
 </section>
 
 <section class="block" id="guide">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sec-head">
       <h2>Eat, shop and watch</h2>
-      <p>The trip at a glance, for anyone who wants to borrow the best of it.</p>
+      <p>The whole trip's picks in one place, for when you need an idea fast.</p>
     </div>
     <div class="guides">
-      <div class="rv">
+      <div>
         <h3 style="--c:var(--cinnabar)">Eat</h3>
         <ul>
-          <li><b>Fu Chun Ju</b><span>Michelin-starred, The PuXuan, Beijing</span></li>
-          <li><b>Jubaoyuan, Niujie</b><span>Copper-pot mutton hotpot, Beijing</span></li>
-          <li><b>Longjuxiang Shaomai</b><span>Datong's steamed dumplings</span></li>
-          <li><b>Fenglinge</b><span>Sweet-and-sour meatballs, Datong</span></li>
-          <li><b>Kiessling</b><span>Historic Western restaurant, Tianjin</span></li>
-          <li><b>Changji Seafood</b><span>Local seafood, Aranya</span></li>
+          <li><b>Baoyuan Jiaozi Wu</b><span>Rainbow dumplings · Day 1</span></li>
+          <li><b>Longjuxiang Shaomai · Fenglinge</b><span>Datong dumplings and meatballs · Days 3–4</span></li>
+          <li><b>Hen Jiu Yi Qian, Wangfujing APM</b><span>Lamb skewers in the brand's hometown · Day 5</span></li>
+          <li><b>Fu Chun Ju</b><span>Michelin-starred, The PuXuan · Day 6</span></li>
+          <li><b>Xiaodiao Litang, Sanlitun</b><span>Pear soup and palace desserts · Day 7</span></li>
+          <li><b>Jubaoyuan · Da Dong</b><span>Mutton hotpot and roast duck · Day 8</span></li>
+          <li><b>Kiessling</b><span>Historic Western restaurant, Tianjin · Day 9</span></li>
+          <li><b>Changji Seafood · Wuji Yugang</b><span>Seafood in Aranya · Days 9–10</span></li>
+          <li><b>Toothsome Chocolate Emporium</b><span>Universal CityWalk · Day 12</span></li>
         </ul>
       </div>
-      <div class="rv">
-        <h3 style="--c:#8B6BB1">Shop</h3>
+      <div>
+        <h3 style="--c:var(--plum)">Shop</h3>
         <ul>
-          <li><b>Chaoyang Joy City</b><span>Pop Mart, trading cards, collectibles</span></li>
-          <li><b>Daoxiangcun Treasure-Hunt Store</b><span>Heritage bakery reimagined, Longfu Temple</span></li>
-          <li><b>798 design shops</b><span>Independent makers and gallery stores</span></li>
-          <li><b>Zhongshuge, Tianjin</b><span>Bookstore with creative products</span></li>
-          <li><b>Guifaxiang mahua</b><span>Tianjin's classic edible souvenir</span></li>
+          <li><b>Hopson One</b><span>Toys, snacks, kids' play · Day 2</span></li>
+          <li><b>Beitou Shopping Park</b><span>Trend-toy mall · Day 5</span></li>
+          <li><b>Daoxiangcun Treasure-Hunt Store</b><span>Pastries in novelty boxes · Day 5</span></li>
+          <li><b>Wangfujing Xiyue, B2</b><span>Anime and game goods · Day 6</span></li>
+          <li><b>798 design shops · Sanlitun South</b><span>Day 7</span></li>
+          <li><b>Guifaxiang mahua</b><span>Tianjin Station · Day 9</span></li>
         </ul>
       </div>
-      <div class="rv">
+      <div>
         <h3 style="--c:var(--gold)">Watch</h3>
         <ul>
-          <li><b>The Legend of Kung Fu</b><span>Red Theatre, Beijing</span></li>
-          <li><b>South Gate shows</b><span>Mulan and a Northern Wei ceremony, Datong</span></li>
-          <li><b>Tianxia Datong</b><span>Evening show at Daiwangfu, Datong</span></li>
-          <li><b>Aranya Theatre Festival</b><span>Outdoor performances by the sea</span></li>
+          <li><b>South Gate shows</b><span>Mulan, Datong · Day 3</span></li>
+          <li><b>Tianxia Datong</b><span>Daiwangfu, Datong · Day 4</span></li>
+          <li><b>The Legend of Kung Fu</b><span>Red Theatre, Beijing · Day 8</span></li>
+          <li><b>Aranya Theatre Festival</b><span>By the sea · Days 9–10</span></li>
+        </ul>
+        <h3 style="--c:#3C7F99;margin-top:28px">Rest stops</h3>
+        <ul>
+          <li><b>Mu·Cafe</b><span>Mutianyu · Day 2</span></li>
+          <li><b>Huguosi Snacks, Di'anmen</b><span>Naipizi yogurt · Day 5</span></li>
+          <li><b>Corner Tower Café</b><span>Forbidden City · Day 6</span></li>
+          <li><b>Weiduomei, Temple of Heaven</b><span>Tanghulu croissant · Day 8</span></li>
+          <li><b>POP BAKERY</b><span>Aranya · Day 10</span></li>
+          <li><b>Butterbeer</b><span>Universal · Day 12</span></li>
         </ul>
       </div>
     </div>
@@ -648,24 +631,29 @@ dialog.lb button{position:fixed;top:14px;right:14px;width:42px;height:42px;borde
 
 <section class="block" id="practical">
   <div class="wrap">
-    <div class="practical rv">
+    <div class="practical">
       <div>
         <h3>Good to know</h3>
         <ul>
-          <li>Fly in and out of Beijing Capital (PEK) — it suits both the city hotels and Universal.</li>
-          <li>Every leg is by high-speed train; the longest is about 2.5 hours.</li>
-          <li>Beijing's big museums and the Forbidden City close on Mondays — this plan works around them.</li>
-          <li>Northern Shanxi stays mild in June, usually well below Beijing's temperatures.</li>
+          <li>Fly in and out of Beijing Capital (PEK). It suits both the city hotels and Universal.</li>
+          <li>The longest train leg is about 2.5 hours.</li>
+          <li>Big museums and the Forbidden City close on Mondays. This plan works around them.</li>
+          <li>Northern Shanxi stays mild in June, usually cooler than Beijing.</li>
+          <li>Install Amap, Didi and Dianping, and set up Alipay or WeChat Pay before you fly.</li>
+          <li>Carry passports: trains and many sights use real-name tickets.</li>
+          <li>Buffets and seafood places serve raw dishes; everything listed has plenty cooked.</li>
         </ul>
       </div>
       <div>
         <h3>Book early</h3>
         <ol>
           <li>Aranya rooms, once the festival dates are announced</li>
-          <li>Forbidden City tickets on release (real-name, they sell out)</li>
+          <li>Forbidden City tickets on release (real-name; they sell out)</li>
           <li>Universal hotel and park tickets together</li>
           <li>Yungang Grottoes time slot</li>
-          <li>Kung fu show seats</li>
+          <li>Kung fu show seats (the earlier show), then Da Dong for that evening</li>
+          <li>Weekday tickets for Jiuhao Hot Spring and Together Fantasy City</li>
+          <li>Car and driver for Tianjin (21 June) and the station pick-up on 23 June</li>
         </ol>
       </div>
     </div>
@@ -674,9 +662,9 @@ dialog.lb button{position:fixed;top:14px;right:14px;width:42px;height:42px;borde
 
 <section class="closing" aria-label="Closing">
   <img src="{{src:jingshan-view}}-sm.jpg" srcset="img/jingshan-view-sm.jpg 900w, img/jingshan-view.jpg 1800w" sizes="100vw" alt="" loading="lazy">
-  <div class="wrap rv">
+  <div class="wrap">
     <h2>一路平安</h2>
-    <p>Safe travels — from the Wall to the sea, and home again.</p>
+    <p>Safe travels, from the Wall to the sea and home again.</p>
   </div>
 </section>
 
@@ -685,8 +673,8 @@ dialog.lb button{position:fixed;top:14px;right:14px;width:42px;height:42px;borde
 <footer>
   <div class="wrap">
     <div class="top">
-      <span>A family itinerary for 13–26 June 2027.</span>
-      <span>Opening hours, show schedules and festival dates can change — check before booking.</span>
+      <span>A family itinerary for 13–25 June 2027.</span>
+      <span>Opening hours, show times and festival dates can change. Check on the day.</span>
     </div>
     <details>
       <summary>Photo credits</summary>
@@ -699,22 +687,50 @@ dialog.lb button{position:fixed;top:14px;right:14px;width:42px;height:42px;borde
 </footer>
 
 <dialog class="lb" id="lb" aria-label="Photo viewer">
-  <button type="button" aria-label="Close" id="lbx">×</button>
+  <button type="button" class="x" aria-label="Close" id="lbx">×</button>
   <img alt="" id="lbimg">
   <p><b id="lbcap"></b><span id="lbcred"></span></p>
 </dialog>
 
+<dialog class="drvcard" id="drv" aria-label="Show this to your driver">
+  <button type="button" class="x" aria-label="Close" id="drvx">×</button>
+  <p class="ask">师傅，请带我们去：</p>
+  <p class="big" id="drvzh"></p>
+  <p class="en" id="drven"></p>
+</dialog>
+
 <script>
 (function(){
-  var nav=document.getElementById('nav'),hero=document.getElementById('top');
-  function onScroll(){nav.classList.toggle('solid',window.scrollY>hero.offsetHeight-80)}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // Today: highlight the matching day during the trip and point the hero button at it
+  var pad=function(n){return(n<10?'0':'')+n};
+  var d=new Date(),iso=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+  var today=document.querySelector('.day[data-date="'+iso+'"]');
+  if(today){
+    today.classList.add('is-today');
+    var btn=document.getElementById('todayBtn');
+    btn.href='#'+today.id;btn.textContent='Go to today · Day '+today.id.slice(1);
+    var pill=document.querySelector('#picker a[href="#'+today.id+'"]');
+    if(pill)pill.classList.add('today');
+  }
 
+  // Day picker: mark the day on screen and keep its pill in view
+  var pills={};
+  document.querySelectorAll('#picker a').forEach(function(a){pills[a.getAttribute('href').slice(1)]=a});
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-  }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')})}
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var p=pills[e.target.id];if(!p)return;
+        document.querySelectorAll('#picker a.on').forEach(function(x){x.classList.remove('on')});
+        p.classList.add('on');
+        var bar=p.parentNode,l=p.offsetLeft-bar.clientWidth/2+p.clientWidth/2;
+        bar.scrollTo({left:l,behavior:'smooth'});
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    document.querySelectorAll('.day').forEach(function(el){io.observe(el)});
+  }
 
+  // Photo lightbox
   var lb=document.getElementById('lb'),img=document.getElementById('lbimg');
   document.querySelectorAll('.ph a').forEach(function(a){
     a.addEventListener('click',function(ev){
@@ -728,6 +744,18 @@ dialog.lb button{position:fixed;top:14px;right:14px;width:42px;height:42px;borde
   });
   document.getElementById('lbx').addEventListener('click',function(){lb.close()});
   lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+
+  // Show-the-driver card
+  var drv=document.getElementById('drv');
+  document.querySelectorAll('.drv').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.getElementById('drvzh').textContent=b.dataset.zh;
+      document.getElementById('drven').textContent=b.dataset.en;
+      if(drv.showModal)drv.showModal();else drv.setAttribute('open','');
+    });
+  });
+  document.getElementById('drvx').addEventListener('click',function(){drv.close()});
+  drv.addEventListener('click',function(e){if(e.target===drv)drv.close()});
 })();
 </script>
 </body>
